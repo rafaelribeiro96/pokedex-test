@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Pokemon from './Pokemon';
 
 function Pokedex(props) {
   const { pokemons, loading } = props;
@@ -12,15 +13,8 @@ function Pokedex(props) {
       {loading ? (<div>Loading ...</div>) : (
         <div className="pokedex-grid">
           { pokemons && pokemons.map((pokemon, index) => (
-            <div key={ index }>
-              <div>
-                { pokemon.name }
-              </div>
-            </div>
-
+            <Pokemon key={ index } pokemon={ pokemon } />
           ))}
-          {' '}
-
         </div>
       )}
     </div>
