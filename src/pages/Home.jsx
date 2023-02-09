@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
 
 function Home() {
@@ -7,9 +8,7 @@ function Home() {
     <div className="home-container">
       <Navbar />
       <Searchbar />
-      <div>
-        <h1>Home</h1>
-      </div>
+      <Pokedex />
     </div>
   );
 }
