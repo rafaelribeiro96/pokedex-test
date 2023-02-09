@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
-import { getPokemons } from '../services/apiPokemon';
+import { getPokemonData, getPokemons } from '../services/apiPokemon';
 
 function Home() {
   const [loading, setLoading] = React.useState(false);
@@ -11,7 +11,9 @@ function Home() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const response = await getPokemons();
+      const data = await getPokemons();
+      const promises = data.results.map((pokemon) => getPokemonData(pokemon.url));
+      const response = await Promise.all(promises);
       setPokemons(response);
       setLoading(false);
     } catch (error) {
@@ -28,7 +30,7 @@ function Home() {
     <div className="home-container">
       <Navbar />
       <Searchbar />
-      <Pokedex pokemons={ pokemons.results } loading={ loading } />
+      <Pokedex pokemons={ pokemons } loading={ loading } />
     </div>
   );
 }

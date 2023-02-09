@@ -3,14 +3,18 @@ import React from 'react';
 
 function Pokemon(props) {
   const { pokemon } = props;
+  console.log('pokemons', pokemon);
   return (
-    <div>
+    <div className="pokemon-card">
       <div>
-        <div>{pokemon.name}</div>
-        <div>{pokemon.id}</div>
-        <div>{pokemon.weight}</div>
-        <div>{pokemon.height}</div>
-        <div>{pokemon.base_experience}</div>
+        <h4>{pokemon.name}</h4>
+        <div>
+          #
+          {pokemon.id}
+        </div>
+      </div>
+      <div className="pokemon-image-card">
+        <img src={ pokemon.sprites.front_default } alt={ pokemon.name } />
       </div>
     </div>
   );
