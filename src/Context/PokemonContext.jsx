@@ -1,4 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useMemo } from 'react';
+import PropTypes from 'prop-types';
 
 const PokemonContext = createContext();
 
@@ -9,7 +10,7 @@ function PokemonProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=807')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
       .then((res) => res.json())
       .then((data) => {
         setPokemons(data.results);
@@ -34,4 +35,4 @@ PokemonProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default PokemonContext;
+export default PokemonProvider;
