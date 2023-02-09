@@ -4,8 +4,7 @@
       "es2021": true
   },
   "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
+      "trybe-frontend"
   ],
   "overrides": [
   ],
@@ -14,10 +13,10 @@
       "sourceType": "module"
   },
   "plugins": [
-      "react",
-      "@typescript-eslint"
+      "react"
   ],
   "rules": {
+        "react/jsx-no-constructed-context-values": 0,
       "indent": [
           "error",
           2
@@ -34,5 +33,6 @@
           "error",
           "always"
       ]
+      
   }
 }
