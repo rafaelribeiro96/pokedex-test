@@ -3,7 +3,7 @@ import logoPokemon from '../assets/images/logo-pokemon.png';
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar-container">
       <div>
         <img src={ logoPokemon } alt="Logo Pokemon" className="logo-pokemon" />
       </div>
