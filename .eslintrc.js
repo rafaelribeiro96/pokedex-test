@@ -1,22 +1,13 @@
 module.exports = {
   env: {
     browser: true,
-    commonjs: true,
-    es2021: true,
-    node: true,
+    es2020: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
-  overrides: [
-  ],
+  extends: ['trybe-frontend'],
   parserOptions: {
-    ecmaVersion: 'latest',
-  },
-  plugins: [
-    'react',
-  ],
-  rules: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    sourceType: 'module',
   },
 };
