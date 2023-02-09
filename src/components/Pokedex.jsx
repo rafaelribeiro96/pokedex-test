@@ -8,7 +8,7 @@ function Pokedex(props) {
     <div>
       <div>
         <h1>Pokedex</h1>
-        <div>Pokemons</div>
+        <div>Páginas</div>
       </div>
       {loading ? (<div>Loading ...</div>) : (
         <div className="pokedex-grid">
