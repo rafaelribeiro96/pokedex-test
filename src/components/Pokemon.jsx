@@ -36,18 +36,20 @@ function Pokemon(props) {
         />
       </div>
 
-      <div className="pokemon-title-grid">
-        <h4 className="pokemon-name-card">{pokemon.name}</h4>
-        <div className="pokemon-id-card">
-          #
-          {pokemon.id}
+      <div className="pokemons-info-card">
+        <div className="pokemon-title-grid">
+          <h4 className="pokemon-name-card">{pokemon.name}</h4>
+          <div className="pokemon-id-card">
+            #
+            {pokemon.id}
+          </div>
         </div>
-      </div>
 
-      <div className="pokemon-types-grid">
-        {pokemon.types.map((type, index) => (
-          <div key={ index } className="pokemon-type-text">{type.type.name}</div>
-        ))}
+        <div className="pokemon-types-grid">
+          {pokemon.types.map((type, index) => (
+            <div key={ index } className="pokemon-type-text">{type.type.name}</div>
+          ))}
+        </div>
       </div>
     </div>
   );
