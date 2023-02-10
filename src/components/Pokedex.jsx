@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Pokemon from './Pokemon';
 import './Pokedex.css';
 import Pagination from './Pagination';
@@ -29,11 +30,16 @@ function Pokedex(props) {
           onRightClick={ onRightClickHandler }
         />
       </div>
-      {loading ? (<div>Loading ...</div>) : (
+      {loading ? (
+        <div>Loading ...</div>
+      ) : (
         <div className="pokedex-grid">
-          { pokemons && pokemons.map((pokemon, index) => (
-            <Pokemon key={ index } pokemon={ pokemon } />
-          ))}
+          {pokemons
+            && pokemons.map((pokemon, index) => (
+              <Link className="card-a" to={ `/pokemon/${pokemon.id}` } key={ index }>
+                <Pokemon pokemon={ pokemon } />
+              </Link>
+            ))}
         </div>
       )}
     </div>

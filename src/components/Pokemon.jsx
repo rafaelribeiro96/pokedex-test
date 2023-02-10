@@ -4,9 +4,9 @@ import './Pokemon.css';
 
 function Pokemon(props) {
   const { pokemon } = props;
+
   return (
     <div className="pokemon-card-grid">
-
       <div className="pokemon-title-grid">
         <h4>{pokemon.name}</h4>
         <div>
