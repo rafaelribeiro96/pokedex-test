@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-indent-props */
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Header from '../components/Header';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
 import { getPokemonData, getPokemons, searchPokemon } from '../services/apiPokemon';
@@ -54,7 +54,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <Navbar />
+      <Header />
       <Searchbar onSearch={ onSearchHandler } />
       {notFound ? (
         <div className="not-found-pokemon">

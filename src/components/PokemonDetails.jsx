@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
-import Navbar from './Navbar';
+import Header from './Header';
 import './PokemonDetails.css';
 
 function PokemonDetails() {
@@ -25,7 +25,7 @@ function PokemonDetails() {
 
   return (
     <div>
-      <Navbar />
+      <Header />
       <div className="container-pokemon-details">
         <button
           onClick={ () => navigate('/') }
