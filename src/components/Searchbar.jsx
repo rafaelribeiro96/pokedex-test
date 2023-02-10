@@ -1,59 +1,30 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { searchPokemon } from '../services/apiPokemon';
 import './Searchbar.css';
 
-function Searchbar() {
+function Searchbar(props) {
   const [pokemonSearch, setPokemonSearch] = useState('charizard');
-  const [pokemon, setPokemon] = useState({});
+  const { onSearch } = props;
 
-  const onChangeHandler = (event) => {
-    console.log(event.target.value);
-    setPokemonSearch(event.target.value);
-  };
-
-  const onSearchHandler = async (pokemonResult) => {
-    const result = await searchPokemon(pokemonResult);
-    setPokemon(result);
+  const onChangeHandler = (e) => {
+    setPokemonSearch(e.target.value);
+    if (e.target.value.length === 0) {
+      onSearch(undefined);
+    }
   };
 
   const onButtonClick = () => {
-    onSearchHandler(pokemonSearch);
+    onSearch(pokemonSearch);
   };
 
   return (
     <div className="searchbar-container">
-
       <div className="searchbar">
-        <input type="text" placeholder="Buscar Pokemon" onChange={ onChangeHandler } />
+        <input placeholder="Buscar pokemon" onChange={ onChangeHandler } />
       </div>
-
-      <div className="div-searchbar-btn">
-        <button
-          className="searchbar-btn"
-          type="button"
-          onClick={ onButtonClick }
-        >
-          Buscar
-        </button>
+      <div className="searchbar-btn">
+        <button onClick={ onButtonClick } type="button">Buscar</button>
       </div>
-      { pokemon && pokemon.sprites ? (
-        <div>
-          <div>
-            <h4>Nome:</h4>
-            {pokemon.name}
-          </div>
-          <div>
-            <h4>Altura:</h4>
-            {pokemon.height}
-          </div>
-          <div>
-            <h4>Peso:</h4>
-            {pokemon.weight}
-          </div>
-          <img src={ pokemon.sprites.front_default } alt={ pokemon.name } />
-        </div>
-      ) : null}
     </div>
   );
 }

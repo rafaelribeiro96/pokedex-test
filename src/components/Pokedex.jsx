@@ -22,7 +22,6 @@ function Pokedex(props) {
   return (
     <div>
       <div>
-        <h1>Pokedex</h1>
         <Pagination
           page={ page + 1 }
           totalPages={ totalPages }
