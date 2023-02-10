@@ -12,33 +12,40 @@ Pokedex é um projeto desenvolvido utilizando React e a API PokéApi. Com intuit
 - Responsividade
 - Cor de Background de cada Pokémon de acordo com seu Tipo
 
-## Para testar a pokedex funcionando acesse:
+## Para usar a pokedex acesse:
 
 https://pokedexrr.netlify.app/
 
 ## Responsividade
 
-<p align="center">
-  <img src="https://github.com/lucasbento/react-relay-pokemon/raw/master/content/logo.png">
-</p>
-
-<p align="center">
-  <img src="https://github.com/lucasbento/react-relay-pokemon/raw/master/content/logo.png">
-</p>
-
-<p align="center">
-  <img src="https://github.com/lucasbento/react-relay-pokemon/raw/master/content/logo.png">
-</p>
+<div>
+  <img src="https://github.com/rafaelribeiro96/pokedex-test/blob/main/src/assets/readme/responsividade%20pokedex.png">
+</div>
 
 ## Listar os Pokemons
+<div>
+  <img src="https://github.com/rafaelribeiro96/pokedex-test/blob/main/src/assets/readme/renderizacao.gif">
+</div>
 
 ## Informações detalhadas do Pokemon
+<div>
+  <img src="https://github.com/rafaelribeiro96/pokedex-test/blob/main/src/assets/readme/detalhes.gif">
+</div>
 
 ## Pesquisar Pokemon
+<div>
+  <img src="https://github.com/rafaelribeiro96/pokedex-test/blob/main/src/assets/readme/pesquisa.gif">
+</div>
 
 ## Versão Shiny Pokemon
+<div>
+  <img src="https://github.com/rafaelribeiro96/pokedex-test/blob/main/src/assets/readme/shiny.gif">
+</div>
 
 ## Tela de Loading
+<div>
+  <img src="https://github.com/rafaelribeiro96/pokedex-test/blob/main/src/assets/readme/loading.gif">
+</div>
 
 ## Como instalar localmente
 
