@@ -27,13 +27,19 @@ function Searchbar(props) {
     <div className="searchbar-container">
       <div className="searchbar">
         <input
+          className="searchbar-input"
           placeholder="Buscar pokemon"
           onChange={ onChangeHandler }
           onKeyDown={ onKeyDownHandler }
         />
-      </div>
-      <div className="searchbar-btn">
-        <button onClick={ onButtonClick } type="button">Buscar</button>
+        <button
+          className="searchbar-btn"
+          onClick={ onButtonClick }
+          type="button"
+        >
+          Buscar
+
+        </button>
       </div>
     </div>
   );
