@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-indent-props */
 import React, { useEffect, useState } from 'react';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
@@ -74,6 +75,7 @@ function Home() {
           setPage={ setPage }
           totalPages={ totalPages }
         />)}
+      <Footer />
     </div>
   );
 }
