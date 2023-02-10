@@ -17,10 +17,20 @@ function Searchbar(props) {
     onSearch(pokemonSearch);
   };
 
+  const onKeyDownHandler = (e) => {
+    if (e.key === 'Enter') {
+      onButtonClick();
+    }
+  };
+
   return (
     <div className="searchbar-container">
       <div className="searchbar">
-        <input placeholder="Buscar pokemon" onChange={ onChangeHandler } />
+        <input
+          placeholder="Buscar pokemon"
+          onChange={ onChangeHandler }
+          onKeyDown={ onKeyDownHandler }
+        />
       </div>
       <div className="searchbar-btn">
         <button onClick={ onButtonClick } type="button">Buscar</button>
