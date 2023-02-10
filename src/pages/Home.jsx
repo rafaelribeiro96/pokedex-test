@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-indent-props */
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
