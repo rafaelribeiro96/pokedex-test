@@ -4,7 +4,6 @@ import './Pokemon.css';
 
 function Pokemon(props) {
   const { pokemon } = props;
-  console.log('pokemons', pokemon);
   return (
     <div className="pokemon-card-grid">
 

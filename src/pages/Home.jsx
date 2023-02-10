@@ -22,7 +22,6 @@ function Home() {
   };
 
   useEffect(() => {
-    console.log('carregou');
     fetchPokemons();
   }, []);
 
