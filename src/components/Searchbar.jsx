@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { searchPokemon } from '../services/apiPokemon';
+import './Searchbar.css';
 
 function Searchbar() {
   const [pokemonSearch, setPokemonSearch] = useState('charizard');

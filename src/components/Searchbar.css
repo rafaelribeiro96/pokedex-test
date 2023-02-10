@@ -1,0 +1,9 @@
+.searchbar-container {
+  align-items: center;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
