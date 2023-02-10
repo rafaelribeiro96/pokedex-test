@@ -7,8 +7,8 @@ function Searchbar(props) {
   const { onSearch } = props;
 
   const onChangeHandler = (e) => {
-    setPokemonSearch(e.target.value);
-    console.log(e.target.value);
+    setPokemonSearch(e.target.value.toLowerCase());
+    console.log(e.target.value.toLowerCase());
     if (e.target.value.length === 0) {
       onSearch(undefined);
     }
