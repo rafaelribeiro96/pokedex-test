@@ -34,8 +34,8 @@ function PokemonDetails() {
       </button>
       <h1 className="title-pokemon-details">{pokemon.name}</h1>
       <img
-        className="img-front-details"
-        src={ pokemon.sprites.front_default }
+        className="img-details"
+        src={ pokemon.sprites.other.home.front_default }
         alt={ pokemon.name }
       />
       <div className="pokemons-other-details">

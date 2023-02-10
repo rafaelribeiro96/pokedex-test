@@ -14,10 +14,10 @@
   margin-top: 10px;
 }
 
-.img-front-details {
-  height: 200px;
+.img-details {
   margin-top: 10px;
-  width: 200px;
+  max-width: 500px;
+  width: 50%;
 }
 
 .pokemons-other-details {
