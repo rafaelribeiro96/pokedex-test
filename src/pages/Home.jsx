@@ -55,7 +55,16 @@ function Home() {
       <Navbar />
       <Searchbar onSearch={ onSearchHandler } />
       {notFound ? (
-        <div class-name="not-found-text">Este Pokemón não existe!</div>
+        <div className="not-found-pokemon">
+          <div class-name="not-found-text">
+            Este Pokemón não existe!
+            Digite novamente o nome do seu Pokémon!
+
+          </div>
+          <a href="/">
+            <button type="button">Volte a tela inicial</button>
+          </a>
+        </div>
       )
         : (<Pokedex
           pokemons={ pokemons }
