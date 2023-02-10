@@ -1,7 +1,17 @@
+.card-a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 5px;
+  padding: 0;
+  width: 30%;
+}
+
 .pokemon-card-grid {
   align-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.199);
+  background-color: rgba(224, 224, 224, 0.425);
   border: 1px solid rgba(44, 27, 196, 0.411);
   border-radius: 10px;
   display: flex;
@@ -11,14 +21,4 @@
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-.card-a {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  width: 30%;
 }
