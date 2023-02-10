@@ -76,6 +76,20 @@ function PokemonDetails() {
             {pokemon.height}
           </p>
         </div>
+        <div className="stats-pokemons">
+          <h2>Stats</h2>
+          {pokemon.stats.map((stat) => (
+            <div key={ stat.stat.name } className="stats-pokemons-details">
+              <p>
+                {stat.stat.name}
+                :
+                {' '}
+                {stat.base_stat}
+              </p>
+
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
