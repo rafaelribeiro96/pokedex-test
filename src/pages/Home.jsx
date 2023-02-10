@@ -1,17 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
 import { getPokemonData, getPokemons } from '../services/apiPokemon';
 
 function Home() {
-  const [loading, setLoading] = React.useState(false);
-  const [pokemons, setPokemons] = React.useState([]);
+  const [page, setPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [pokemons, setPokemons] = useState([]);
+
+  const pokemonsForPage = 30;
 
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await getPokemons();
+      const data = await getPokemons(pokemonsForPage, pokemonsForPage * page);
+      setTotalPages(Math.ceil(data.count / pokemonsForPage));
       const promises = data.results.map((pokemon) => getPokemonData(pokemon.url));
       const response = await Promise.all(promises);
       setPokemons(response);
@@ -23,13 +28,19 @@ function Home() {
 
   useEffect(() => {
     fetchPokemons();
-  }, []);
+  }, [page]);
 
   return (
     <div className="home-container">
       <Navbar />
       <Searchbar />
-      <Pokedex pokemons={ pokemons } loading={ loading } />
+      <Pokedex
+        pokemons={ pokemons }
+        loading={ loading }
+        page={ page }
+        setPage={ setPage }
+        totalPages={ totalPages }
+      />
     </div>
   );
 }
