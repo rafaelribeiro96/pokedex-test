@@ -12,7 +12,7 @@
 
 .title-pokemon-details {
   font-family: VT323 , monospace;
-  font-size: 40px;
+  font-size: 50px;
   margin-top: 10px;
 }
 
@@ -146,4 +146,21 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 10px;
+}
+
+
+@media ( max-width : 750px ) {
+
+  .pokemon-infos-details-container {
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .pokemons-other-details {
+    display: flex;
+    flex-direction: wrap;
+    width: 100%;
+  }
+
 }
