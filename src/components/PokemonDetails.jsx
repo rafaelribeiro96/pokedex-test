@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonDetails.css';
+import Loading from './Loading';
 
 const typeColors = {
   grass: '#78C850',
@@ -41,7 +42,7 @@ function PokemonDetails() {
   }, [pokemonId]);
 
   if (!pokemon) {
-    return <div className="loading">Loading...</div>;
+    return <div><Loading /></div>;
   }
 
   return (

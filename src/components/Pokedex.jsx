@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Pokemon from './Pokemon';
 import './Pokedex.css';
 import Pagination from './Pagination';
+import Loading from './Loading';
 
 function Pokedex(props) {
   const { pokemons, loading, page, setPage, totalPages } = props;
@@ -24,6 +25,7 @@ function Pokedex(props) {
     <div>
       <div>
         <Pagination
+          className="pagination-bottom-top"
           page={ page + 1 }
           totalPages={ totalPages }
           onLeftClick={ onLeftClickHandler }
@@ -31,7 +33,7 @@ function Pokedex(props) {
         />
       </div>
       {loading ? (
-        <div>Loading ...</div>
+        <div><Loading /></div>
       ) : (
         <div className="pokedex-grid">
           {pokemons
@@ -42,6 +44,14 @@ function Pokedex(props) {
             ))}
         </div>
       )}
+      <div className="pagination-bottom">
+        <Pagination
+          page={ page + 1 }
+          totalPages={ totalPages }
+          onLeftClick={ onLeftClickHandler }
+          onRightClick={ onRightClickHandler }
+        />
+      </div>
     </div>
   );
 }

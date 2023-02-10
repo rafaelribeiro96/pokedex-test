@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   width: 96vw;
+}
+
+.pagination-bottom {
+  margin-bottom: 100px;
 }
