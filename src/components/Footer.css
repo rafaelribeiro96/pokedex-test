@@ -39,3 +39,16 @@
 .text-footer a:hover {
   color: yellow;
 }
+
+@media ( max-width : 600px ) {
+
+  .icons-footer {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .div-vazia-footer, .text-footer {
+    display: none;
+  }
+}
