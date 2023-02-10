@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
+import Navbar from './Navbar';
 import './PokemonDetails.css';
 
 function PokemonDetails() {
   const [pokemon, setPokemon] = useState(null);
+  const [shiny, setShiny] = useState(false);
   const { pokemonId } = useParams();
   const navigate = useNavigate();
 
@@ -22,43 +24,58 @@ function PokemonDetails() {
   }
 
   return (
-    <div className="container-pokemon-details">
-      <h2>Aqui você pode ver mais informações sobre o Pokémon escolhido.</h2>
-      <button
-        onClick={ () => navigate('/') }
-        type="button"
-        className="btn-back"
-      >
-        Voltar para a pokedex
-
-      </button>
-      <h1 className="title-pokemon-details">{pokemon.name}</h1>
-      <img
-        className="img-details"
-        src={ pokemon.sprites.other.home.front_default }
-        alt={ pokemon.name }
-      />
-      <div className="pokemons-other-details">
-        <p>
-          Pokemon #:
+    <div>
+      <Navbar />
+      <div className="container-pokemon-details">
+        <button
+          onClick={ () => navigate('/') }
+          type="button"
+          className="btn-back"
+        >
+          Voltar para a pokedex
+        </button>
+        <h1 className="title-pokemon-details">
+          {pokemon.name}
+          {' '}
+          #
           {' '}
           {pokemon.id}
-        </p>
-        <p>
-          Tipo:
-          {' '}
-          {pokemon.types.map((type) => type.type.name).join(', ')}
-        </p>
-        <p>
-          Peso:
-          {' '}
-          {pokemon.weight}
-        </p>
-        <p>
-          Altura:
-          {' '}
-          {pokemon.height}
-        </p>
+        </h1>
+        <div className="checkbox-container">
+          <label htmlFor="shiny">
+            Versão Shiny
+            <input
+              type="checkbox"
+              id="shiny"
+              checked={ shiny }
+              onChange={ () => setShiny(!shiny) }
+            />
+          </label>
+
+        </div>
+        <img
+          className="img-details"
+          src={ shiny ? pokemon.sprites.other.home.front_shiny
+            : pokemon.sprites.other.home.front_default }
+          alt={ pokemon.name }
+        />
+        <div className="pokemons-other-details">
+          <p>
+            Tipo:
+            {' '}
+            {pokemon.types.map((type) => type.type.name).join(', ')}
+          </p>
+          <p>
+            Peso:
+            {' '}
+            {pokemon.weight}
+          </p>
+          <p>
+            Altura:
+            {' '}
+            {pokemon.height}
+          </p>
+        </div>
       </div>
     </div>
   );

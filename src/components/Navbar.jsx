@@ -5,9 +5,11 @@ import './Navbar.css';
 function Navbar() {
   return (
     <nav className="navbar-container">
-      <div>
+      <a href="/">
+        {' '}
         <img src={ logoPokemon } alt="Logo Pokemon" className="logo-pokemon" />
-      </div>
+      </a>
+
     </nav>
   );
 }
