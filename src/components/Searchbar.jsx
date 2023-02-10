@@ -28,7 +28,7 @@ function Searchbar(props) {
       <div className="searchbar">
         <input
           className="searchbar-input"
-          placeholder="Buscar pokemon"
+          placeholder="Digite o nome do pokemon"
           onChange={ onChangeHandler }
           onKeyDown={ onKeyDownHandler }
         />

@@ -32,6 +32,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   color: white;
   cursor: pointer;
+  font-family: VT323 , monospace;
   font-size: 1.6em;
   padding: 10px 20px;
 }
