@@ -1,0 +1,9 @@
+.home-container {
+  align-items: center;
+  background-image: url('../assets/images/background3.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
