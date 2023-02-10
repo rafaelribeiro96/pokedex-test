@@ -21,7 +21,7 @@
 }
 
 .btn-back {
-  background-color: darkgreen;
+  background-color: #272b68f5;
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 5px #333;
@@ -34,7 +34,8 @@
 }
 
 .btn-back:hover {
-  background-color: forestgreen;
+  background-color: yellow;
+  color: black;
 }
 
 .loading {

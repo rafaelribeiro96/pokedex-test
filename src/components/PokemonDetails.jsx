@@ -4,11 +4,33 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonDetails.css';
 
+const typeColors = {
+  grass: '#78C850',
+  fire: '#F08030',
+  water: '#6890F0',
+  bug: '#A8B820',
+  normal: '#A8A878',
+  poison: '#A040A0',
+  electric: '#F8D030',
+  ground: '#E0C068',
+  fairy: '#EE99AC',
+  fighting: '#C03028',
+  psychic: '#F85888',
+  rock: '#B8A038',
+  ghost: '#705898',
+  dragon: '#7038F8',
+  dark: '#705848',
+  steel: '#B8B8D0',
+  ice: '#98D8D8',
+};
+
 function PokemonDetails() {
   const [pokemon, setPokemon] = useState(null);
   const [shiny, setShiny] = useState(false);
   const { pokemonId } = useParams();
   const navigate = useNavigate();
+
+  const backgroundColor = pokemon ? typeColors[pokemon.types[0].type.name] : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +45,7 @@ function PokemonDetails() {
   }
 
   return (
-    <div className="container-pokemon-details">
+    <div className="container-pokemon-details" style={ { backgroundColor } }>
       <button
         onClick={ () => navigate('/') }
         type="button"
