@@ -1,11 +1,41 @@
 .footer-container {
-  background-color: blue;
+  background-color: #272b68f5;
   bottom: 0;
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
   height: 20px;
+  justify-content: space-between;
   padding: 20px 0;
   position: fixed;
-  text-align: center;
   width: 100%;
 }
 
+.text-footer {
+  text-align: center;
+}
+
+.icons-footer {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  margin-right: 5%;
+  margin-top: -5px;
+}
+
+.icon-footer {
+  height: 30px;
+}
+
+.icon-git {
+  margin-right: 30px;
+}
+
+.div-vazia-footer {
+  margin-left: 5%;
+}
+
+.text-footer a:hover {
+  color: yellow;
+}
