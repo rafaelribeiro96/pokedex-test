@@ -83,24 +83,24 @@
 
 
 .stats-pokemons-details {
-  background-color: #cfcfcf6b;
   border-radius: 5px;
-  box-shadow: 2px 2px #aaa;
-  display: inline-block;
-  margin: 5px 0;
-  padding: 10px;
-  text-align: center;
-  width: 90%;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px;
+  text-align: left;
+  width: 200px;
 }
 
+
 .stats-pokemons-details p {
-  font-size: 20px;
   margin: 0;
 }
 
 .stats-pokemons-details .bar {
-  background-color: rgba(255, 255, 0, 0.493);
-  height: 10%;
+  background-color: rgba(43, 43, 43, 0.493);
+  border: dotted 1px red;
+  height: 5%;
   transition: width 0.5s;
   width: 0;
 }
