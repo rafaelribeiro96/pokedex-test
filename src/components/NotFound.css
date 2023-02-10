@@ -1,0 +1,29 @@
+.not-found-pokemon {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-not-found {
+  background-color: #2040ce;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.button-not-found:hover {
+  background-color: yellow;
+  color: grey;
+}
+
+.img-not-found {
+  margin-top: 20px;
+  width: 60%;
+}
