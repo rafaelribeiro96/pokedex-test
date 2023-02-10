@@ -1,4 +1,4 @@
-const limitPokemons = 50;
+const limitPokemons = 30;
 
 export const searchPokemon = async (pokemon) => fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
   .then((response) => response.json())
