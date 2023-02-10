@@ -55,4 +55,3 @@ Este projeto foi criado utilizando Create React App, para mais informações ace
 2. Instale as dependências necessárias executando o comando 'npm install' na pasta raiz do projeto
 3. Inicie a aplicação executando o comando 'npm start'
 4. Verifique no terminal o link que será disponibilizado para acesser o site localmente, o endereço padrão é http://localhost:3000/
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
