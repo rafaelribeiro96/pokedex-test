@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './Pagination.css';
 
 function Pagination(props) {
   const { page, totalPages, onLeftClick, onRightClick } = props;
