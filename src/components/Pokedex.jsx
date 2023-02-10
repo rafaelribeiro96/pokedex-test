@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Pokemon from './Pokemon';
+import './Pokedex.css';
 
 function Pokedex(props) {
   const { pokemons, loading } = props;

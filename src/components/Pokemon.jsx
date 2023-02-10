@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './Pokemon.css';
 
 function Pokemon(props) {
   const { pokemon } = props;
