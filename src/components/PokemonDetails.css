@@ -69,7 +69,7 @@
   border-radius: 5px;
   box-shadow: 2px 2px #aaa;
   display: inline-block;
-  font-size: 18px;
+  font-size: 24px;
   margin: 5px 10px;
   padding: 10px;
   text-align: center;
@@ -83,17 +83,18 @@
 
 
 .stats-pokemons-details {
-  border: 1px solid #ccc;
+  background-color: #cfcfcf6b;
   border-radius: 5px;
-  font-size: 18px;
-  height: 40px;
-  line-height: 40px;
-  margin: 10px;
+  box-shadow: 2px 2px #aaa;
+  display: inline-block;
+  margin: 5px 0;
+  padding: 10px;
   text-align: center;
-  width: 200px;
+  width: 90%;
 }
 
 .stats-pokemons-details p {
+  font-size: 20px;
   margin: 0;
 }
 
