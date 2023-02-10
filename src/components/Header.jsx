@@ -26,7 +26,7 @@ function Header() {
   };
 
   return (
-    <nav className="navbar-container">
+    <nav className="header-container">
       <div className="div-vazia" />
       <div className="div-logo-pokemon">
         <a href="/">

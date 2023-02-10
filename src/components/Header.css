@@ -9,7 +9,7 @@
 }
  */
 
-.navbar-container {
+.header-container {
   align-items: center;
   background-color: white;
   display: flex;
@@ -71,8 +71,4 @@
 
 .div-vazia {
   width: 10%;
-}
-
-.div-audio {
-  float: right;
 }

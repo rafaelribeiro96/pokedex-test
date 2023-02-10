@@ -9,7 +9,6 @@ function Footer() {
         {' '}
         <a href="https://www.linkedin.com/in/rafaelfeliperibeiro/">Rafael Ribeiro</a>
       </h2>
-
     </footer>
   );
 }
