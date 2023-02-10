@@ -18,6 +18,18 @@ https://pokedexrr.netlify.app/
 
 ## Responsividade
 
+<p align="center">
+  <img src="https://github.com/lucasbento/react-relay-pokemon/raw/master/content/logo.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/lucasbento/react-relay-pokemon/raw/master/content/logo.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/lucasbento/react-relay-pokemon/raw/master/content/logo.png">
+</p>
+
 ## Listar os Pokemons
 
 ## Informações detalhadas do Pokemon
