@@ -1,3 +1,21 @@
+## Índice
+
+#### 1 - Sobre o Projeto
+- Descrição
+- API utilizada
+#### 2 - Funcionalidades
+#### 3 - Acesso ao Projeto
+#### 4 - Demonstrações
+- Responsividade
+- Listar Pokemons
+- Informações detalhadas do Pokemon
+- Pesquisar Pokemon
+- Versão Shiny Pokemon
+- Tela de Loading
+#### 5 - Instalação Local
+- Pré-requisitos
+- Passo a Passo
+
 # Sobre o Projeto
 
 Pokedex é um projeto desenvolvido utilizando React e a API PokéApi. Com intuito de aprofundar meus conhecimentos em React e consumo de APIs externas. Edereço da API https://pokeapi.co/
