@@ -7,13 +7,43 @@
 
 .div-logo-pokemon {
   justify-content: center;
+  position: relative;
   text-align: center;
 }
 
 .logo-pokemon {
+  animation: logoMovement 3s infinite;
   height: auto;
   margin: 0;
   width: 100%;
+}
+
+
+@keyframes logoMovement {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  0% {
+    transform: translateX(0);
+  }
+}
+
+.logo-pokemon:hover {
+  animation: logoMovement 1s infinite;
 }
 
 .audio-controls {
