@@ -61,3 +61,12 @@
 .div-vazia {
   width: 10%;
 }
+
+
+@media ( max-width : 767px ) {
+
+  .header-container {
+    align-items: center;
+    flex-direction: column;
+  }
+}
