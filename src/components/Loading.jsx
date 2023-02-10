@@ -1,5 +1,6 @@
 import React from 'react';
 import imageLoading from '../assets/images/pikachu-loading.gif';
+import './Loading.css';
 
 function Footer() {
   return (

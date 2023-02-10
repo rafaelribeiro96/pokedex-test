@@ -1,0 +1,17 @@
+.loading-container {
+  align-items: center;
+  display: flex;
+  height: 30vh;
+  justify-content: center;
+}
+
+.img-loading {
+  width: 60%;
+}
+
+@media ( max-width : 720px ) {
+
+  .img-loading {
+    max-width: 200px;
+  }
+}
