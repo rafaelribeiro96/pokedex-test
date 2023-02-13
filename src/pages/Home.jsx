@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Pokedex from '../components/Pokedex';
