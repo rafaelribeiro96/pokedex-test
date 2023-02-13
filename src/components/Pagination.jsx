@@ -54,7 +54,6 @@ function Pagination(props) {
       >
         Última Página
       </button> */}
-      <div className="div-vazia" />
     </nav>
   );
 }
