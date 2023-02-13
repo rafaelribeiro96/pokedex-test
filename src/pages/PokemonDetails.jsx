@@ -49,45 +49,47 @@ function PokemonDetails() {
 
   return (
     <div className="container-pokemon-details" style={ { backgroundColor } }>
-      <button
-        onClick={ () => {
-          if (pokemonId === '10001') {
-            navigate('/pokemon/1008');
-          } else if (pokemonId > 1) {
-            navigate(`/pokemon/${parseInt(pokemonId, 10) - 1}`);
-          } else {
-            navigate('/pokemon/10271');
-          }
-        } }
-        type="button"
-        className="btn-back"
-      >
-        Pokémon anterior
-      </button>
+      <nav className="nav-pokemon-details">
+        <button
+          onClick={ () => {
+            if (pokemonId === '10001') {
+              navigate('/pokemon/1008');
+            } else if (pokemonId > 1) {
+              navigate(`/pokemon/${parseInt(pokemonId, 10) - 1}`);
+            } else {
+              navigate('/pokemon/10271');
+            }
+          } }
+          type="button"
+          className="btn-next-back"
+        >
+          Pokémon anterior
+        </button>
 
-      <button
-        onClick={ () => navigate('/') }
-        type="button"
-        className="btn-back"
-      >
-        VOLTAR PARA A POKEDEX
-      </button>
+        <button
+          onClick={ () => navigate('/') }
+          type="button"
+          className="btn-back"
+        >
+          VOLTAR PARA A POKEDEX
+        </button>
 
-      <button
-        onClick={ () => {
-          if (pokemonId === '1008') {
-            navigate('/pokemon/10001');
-          } else if (pokemonId < lastPokemonId) {
-            navigate(`/pokemon/${parseInt(pokemonId, 10) + 1}`);
-          } else {
-            navigate('/pokemon/1');
-          }
-        } }
-        type="button"
-        className="btn-back"
-      >
-        Pokémon seguinte
-      </button>
+        <button
+          onClick={ () => {
+            if (pokemonId === '1008') {
+              navigate('/pokemon/10001');
+            } else if (pokemonId < lastPokemonId) {
+              navigate(`/pokemon/${parseInt(pokemonId, 10) + 1}`);
+            } else {
+              navigate('/pokemon/1');
+            }
+          } }
+          type="button"
+          className="btn-next-back"
+        >
+          Pokémon seguinte
+        </button>
+      </nav>
 
       <h1 className="title-pokemon-details">
         {pokemon.name}
