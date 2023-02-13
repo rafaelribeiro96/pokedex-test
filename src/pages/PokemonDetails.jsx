@@ -33,6 +33,8 @@ function PokemonDetails() {
 
   const backgroundColor = pokemon ? typeColors[pokemon.types[0].type.name] : null;
 
+  const lastPokemonId = 10271;
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await searchPokemon(pokemonId);
@@ -48,12 +50,45 @@ function PokemonDetails() {
   return (
     <div className="container-pokemon-details" style={ { backgroundColor } }>
       <button
+        onClick={ () => {
+          if (pokemonId === '10001') {
+            navigate('/pokemon/1008');
+          } else if (pokemonId > 1) {
+            navigate(`/pokemon/${parseInt(pokemonId, 10) - 1}`);
+          } else {
+            navigate('/pokemon/10271');
+          }
+        } }
+        type="button"
+        className="btn-back"
+      >
+        Pokémon anterior
+      </button>
+
+      <button
         onClick={ () => navigate('/') }
         type="button"
         className="btn-back"
       >
         VOLTAR PARA A POKEDEX
       </button>
+
+      <button
+        onClick={ () => {
+          if (pokemonId === '1008') {
+            navigate('/pokemon/10001');
+          } else if (pokemonId < lastPokemonId) {
+            navigate(`/pokemon/${parseInt(pokemonId, 10) + 1}`);
+          } else {
+            navigate('/pokemon/1');
+          }
+        } }
+        type="button"
+        className="btn-back"
+      >
+        Pokémon seguinte
+      </button>
+
       <h1 className="title-pokemon-details">
         {pokemon.name}
         {' '}
