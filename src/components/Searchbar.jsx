@@ -3,18 +3,22 @@ import React, { useState } from 'react';
 import './Searchbar.css';
 
 function Searchbar(props) {
-  const [pokemonSearch, setPokemonSearch] = useState('charizard');
+  const [pokemonSearch, setPokemonSearch] = useState('');
   const { onSearch } = props;
 
   const onChangeHandler = (e) => {
-    setPokemonSearch(e.target.value.toLowerCase());
+    setPokemonSearch(e.target.value);
     if (e.target.value.length === 0) {
       onSearch(undefined);
     }
   };
 
   const onButtonClick = () => {
-    onSearch(pokemonSearch);
+    if (Number.isNaN(pokemonSearch)) {
+      onSearch(pokemonSearch.toLowerCase());
+    } else {
+      onSearch(pokemonSearch);
+    }
   };
 
   const onKeyDownHandler = (e) => {
@@ -28,7 +32,7 @@ function Searchbar(props) {
       <div className="searchbar">
         <input
           className="searchbar-input"
-          placeholder="Digite o nome do pokemon"
+          placeholder="Digite o nome ou ID do pokemon"
           onChange={ onChangeHandler }
           onKeyDown={ onKeyDownHandler }
         />

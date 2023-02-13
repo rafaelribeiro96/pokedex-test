@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
-import { getPokemonData, getPokemons, searchPokemon } from '../services/apiPokemon';
+import { getPokemonData, getPokemons,
+  searchPokemonForName, searchPokemon } from '../services/apiPokemon';
 import './Home.css';
 import NotFound from '../components/NotFound';
 
@@ -40,18 +41,31 @@ function Home() {
     if (!pokemon) {
       return fetchPokemons();
     }
-
-    setLoading(true);
-    setNotFound(false);
-    const result = await searchPokemon(pokemon);
-    if (!result) {
-      setNotFound(true);
+    if (!Number.isNaN(Number(pokemon))) {
+      setLoading(true);
+      setNotFound(false);
+      const result = await searchPokemon(pokemon);
+      if (!result) {
+        setNotFound(true);
+      } else {
+        setPokemons([result]);
+        setPage(0);
+        setTotalPages(1);
+      }
+      setLoading(false);
     } else {
-      setPokemons([result]);
-      setPage(0);
-      setTotalPages(1);
+      setLoading(true);
+      setNotFound(false);
+      const result = await searchPokemonForName(pokemon);
+      if (!result) {
+        setNotFound(true);
+      } else {
+        setPokemons([result]);
+        setPage(0);
+        setTotalPages(1);
+      }
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
