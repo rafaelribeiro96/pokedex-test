@@ -53,7 +53,6 @@ function Pagination(props) {
         onClick={ goToLastPage }
       >
         Última Página
-
       </button>
     </nav>
   );
