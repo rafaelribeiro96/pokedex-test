@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import PokemonDetails from './components/PokemonDetails';
+import PokemonDetails from './pages/PokemonDetails';
 
 export default function MainRoutes() {
   return (

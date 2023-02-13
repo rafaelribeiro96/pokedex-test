@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonDetails.css';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 const typeColors = {
   grass: '#78C850',
