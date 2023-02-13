@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/jsx-indent-props */
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Pokedex from '../components/Pokedex';
@@ -9,7 +7,9 @@ import './Home.css';
 import NotFound from '../components/NotFound';
 
 function Home() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(
+    Number(localStorage.getItem('pokedexPage')) || 0,
+  );
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
@@ -53,20 +53,24 @@ function Home() {
     setLoading(false);
   };
 
+  useEffect(() => {
+    localStorage.setItem('pokedexPage', page);
+  }, [page]);
+
   return (
     <div className="home-container">
-
       <Searchbar onSearch={ onSearchHandler } />
       {notFound ? (
         <NotFound />
-      )
-        : (<Pokedex
+      ) : (
+        <Pokedex
           pokemons={ pokemons }
           loading={ loading }
           page={ page }
           setPage={ setPage }
           totalPages={ totalPages }
-        />)}
+        />
+      )}
       <Footer />
     </div>
   );
