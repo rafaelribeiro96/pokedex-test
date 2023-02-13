@@ -30,6 +30,7 @@ function Pokedex(props) {
           totalPages={ totalPages }
           onLeftClick={ onLeftClickHandler }
           onRightClick={ onRightClickHandler }
+          setPage={ setPage }
         />
       </div>
       {loading ? (

@@ -3,9 +3,28 @@ import React from 'react';
 import './Pagination.css';
 
 function Pagination(props) {
-  const { page, totalPages, onLeftClick, onRightClick } = props;
+  const { page, totalPages, onLeftClick, onRightClick, setPage } = props;
+
+  const goToFirstPage = () => {
+    setPage(0);
+    localStorage.setItem('pokedexPage', 0);
+  };
+
+  const goToLastPage = () => {
+    setPage(totalPages - 1);
+    localStorage.setItem('pokedexPage', 0);
+  };
+
   return (
     <nav className="pagination-container">
+      <button
+        type="button"
+        className="button-first-last-page"
+        onClick={ goToFirstPage }
+      >
+        Primeira Página
+
+      </button>
       <button
         className="button-back-page"
         onClick={ onLeftClick }
@@ -27,6 +46,13 @@ function Pagination(props) {
         type="button"
       >
         <div>▶️</div>
+      </button>
+      <button
+        type="button"
+        className="button-first-last-page"
+        onClick={ goToLastPage }
+      >
+        Última Página
 
       </button>
     </nav>

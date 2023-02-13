@@ -34,3 +34,13 @@
   padding: 10px 20px;
 }
 
+.button-first-last-page {
+  background-color: #ffc10700;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  font-family: VT323 , monospace;
+  font-size: 1em;
+  text-decoration: underline;
+}
