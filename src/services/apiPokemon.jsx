@@ -1,4 +1,4 @@
-const limitPokemons = 120;
+const limitPokemons = 30;
 const erroNumber200 = 200;
 
 export const searchPokemon = async (pokemon) => {

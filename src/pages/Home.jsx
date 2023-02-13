@@ -16,7 +16,7 @@ function Home() {
   const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
 
-  const pokemonsForPage = 120;
+  const pokemonsForPage = 30;
 
   const fetchPokemons = async () => {
     try {
