@@ -16,6 +16,10 @@
   margin-top: 10px;
 }
 
+.title-pokemon-details:first-letter {
+  text-transform: uppercase;
+}
+
 .img-details {
   margin-top: 10px;
   max-width: 500px;

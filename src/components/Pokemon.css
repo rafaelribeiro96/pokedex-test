@@ -48,6 +48,10 @@
   text-align: center;
 }
 
+.pokemon-name-card:first-letter {
+  text-transform: uppercase;
+}
+
 .pokemon-id-card {
   color: #777;
   font-size: 15px;
