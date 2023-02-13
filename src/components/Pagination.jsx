@@ -10,10 +10,10 @@ function Pagination(props) {
     localStorage.setItem('pokedexPage', 0);
   };
 
-  const goToLastPage = () => {
+  /* const goToLastPage = () => {
     setPage(totalPages - 1);
     localStorage.setItem('pokedexPage', 0);
-  };
+  }; */
 
   return (
     <nav className="pagination-container">
@@ -47,13 +47,14 @@ function Pagination(props) {
       >
         <div>▶️</div>
       </button>
-      <button
+      {/* <button
         type="button"
         className="button-first-last-page"
         onClick={ goToLastPage }
       >
         Última Página
-      </button>
+      </button> */}
+      <div className="div-vazia" />
     </nav>
   );
 }
