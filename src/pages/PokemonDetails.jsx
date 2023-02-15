@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonDetails.css';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
 
 const typeColors = {
   grass: '#78C850',
@@ -149,6 +150,7 @@ function PokemonDetails() {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

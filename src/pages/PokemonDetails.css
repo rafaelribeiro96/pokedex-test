@@ -181,7 +181,7 @@
   .pokemon-infos-details-container {
     align-items: center;
     flex-direction: column;
-
+    margin-bottom: 80px;
   }
 
   .pokemons-other-details {
