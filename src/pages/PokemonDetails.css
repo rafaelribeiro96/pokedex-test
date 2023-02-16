@@ -92,12 +92,12 @@
 }
 
 .pokemons-other-details p {
-  background-color: #cfcfcf6b;
+  background-color: #cfcfcf57;
   border-radius: 5px;
   box-shadow: 2px 2px #aaa;
   display: inline-block;
   font-size: 24px;
-  margin: 5px 10px;
+  margin: 10px;
   padding: 10px;
   text-align: center;
   width: 90%;

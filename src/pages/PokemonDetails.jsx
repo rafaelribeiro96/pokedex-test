@@ -134,6 +134,11 @@ function PokemonDetails() {
             {' '}
             m
           </p>
+          <p>
+            Habilidades:
+            {' '}
+            {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}
+          </p>
         </div>
         <img
           className="img-details"
