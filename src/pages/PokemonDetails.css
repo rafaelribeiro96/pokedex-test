@@ -98,15 +98,14 @@
 }
 
 .type-pokemon-details {
-  align-items: center;
   background-color: #cfcfcf57;
   border-radius: 5px;
   display: flex;
   filter: brightness(1.15);
   font-size: 24px;
+  justify-content: center;
   margin: 10px;
   padding: 10px;
-  text-align: center;
   width: 90%;
 }
 
