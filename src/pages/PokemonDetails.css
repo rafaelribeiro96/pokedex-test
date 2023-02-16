@@ -21,9 +21,10 @@
 }
 
 .img-details {
+  height: 500px;
   margin-top: 10px;
   max-width: 500px;
-  width: 50%;
+  width: 500px;
 }
 
 .btn-back {
@@ -175,8 +176,28 @@
   width: 10px;
 }
 
+.div-sprites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
 
-@media ( max-width : 750px ) {
+.div-sprites img {
+  margin: 10px;
+  width: 80px;
+}
+
+@media ( max-width : 850px ) {
+
+  .img-details {
+    height: 50%;
+    margin-top: 10px;
+    max-width: 500px;
+    width: 50%;
+  }
 
   .pokemon-infos-details-container {
     align-items: center;
