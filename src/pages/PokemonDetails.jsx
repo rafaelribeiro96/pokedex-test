@@ -1,3 +1,6 @@
+/* eslint-disable max-lines */
+/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -29,10 +32,15 @@ const typeColors = {
 };
 
 function PokemonDetails() {
-  const [pokemon, setPokemon] = useState(null);
-  const [shiny, setShiny] = useState(false);
   const { pokemonId } = useParams();
   const navigate = useNavigate();
+
+  const [pokemon, setPokemon] = useState(null);
+  const [shiny, setShiny] = useState(false);
+  const [nextPokemon, setNextPokemon] = useState(null);
+  const [nextPokemonImageUrl, setNextPokemonImageUrl] = useState(null);
+  const [backPokemon, setBackPokemon] = useState(null);
+  const [backPokemonImageUrl, setBackPokemonImageUrl] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +49,33 @@ function PokemonDetails() {
     };
     fetchData();
   }, [pokemonId]);
+
+  const nextPokemonId = parseInt(pokemonId, 10) + 1;
+  const backPokemonId = parseInt(pokemonId, 10) - 1;
+
+  useEffect(() => {
+    const fetchNextPokemon = async () => {
+      const data = await searchPokemon(nextPokemonId);
+      setNextPokemon(data);
+
+      const imageUrl = data.sprites.other['official-artwork'].front_default;
+      setNextPokemonImageUrl(imageUrl);
+    };
+
+    fetchNextPokemon();
+  }, [nextPokemonId]);
+
+  useEffect(() => {
+    const fetchBackPokemon = async () => {
+      const data = await searchPokemon(backPokemonId);
+      setBackPokemon(data);
+
+      const imageUrl = data.sprites.other['official-artwork'].front_default;
+      setBackPokemonImageUrl(imageUrl);
+    };
+
+    fetchBackPokemon();
+  }, [backPokemonId]);
 
   if (!pokemon) {
     return <div><Loading /></div>;
@@ -62,23 +97,31 @@ function PokemonDetails() {
   const imgOfficialNetwork = pokemon.sprites.other['official-artwork'].front_default;
   const imgPokemonShiny = pokemon.sprites.other.home.front_shiny;
 
+  // Define o estado do próximo Pokémon e da imagem a ser exibida
+
+  // Renderiza o componente
   return (
     <div className="container-pokemon-details" style={ { background } }>
       <nav className="nav-pokemon-details">
+
         <button
           onClick={ () => {
-            if (pokemonId === '10001') {
-              navigate('/pokemon/1008');
+            if (pokemonId === '1') {
+              navigate(`/pokemon/${lastPokemonId}`);
             } else if (pokemonId > 1) {
               navigate(`/pokemon/${parseInt(pokemonId, 10) - 1}`);
             } else {
-              navigate(`/pokemon/${lastPokemonId}`);
+              navigate('/pokemon/1');
             }
           } }
           type="button"
           className="btn-next-back"
         >
-          Pokémon anterior
+          {backPokemonImageUrl && (
+            <div className="next-pokemon-img">
+              <img src={ backPokemonImageUrl } alt={ backPokemon.name } />
+            </div>
+          )}
         </button>
 
         <button
@@ -102,8 +145,13 @@ function PokemonDetails() {
           type="button"
           className="btn-next-back"
         >
-          Pokémon seguinte
+          {nextPokemonImageUrl && (
+            <div className="next-pokemon-img">
+              <img src={ nextPokemonImageUrl } alt={ nextPokemon.name } />
+            </div>
+          )}
         </button>
+
       </nav>
 
       <h1 className="title-pokemon-details">
