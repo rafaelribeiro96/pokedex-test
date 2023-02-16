@@ -17,6 +17,7 @@ const typeColors = {
   electric: '#F8D030',
   ground: '#E0C068',
   fairy: '#EE99AC',
+  flying: '#d7cef0',
   fighting: '#C03028',
   psychic: '#F85888',
   rock: '#B8A038',
@@ -33,10 +34,6 @@ function PokemonDetails() {
   const { pokemonId } = useParams();
   const navigate = useNavigate();
 
-  const backgroundColor = pokemon ? typeColors[pokemon.types[0].type.name] : null;
-
-  const lastPokemonId = 10263;
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await searchPokemon(pokemonId);
@@ -49,12 +46,24 @@ function PokemonDetails() {
     return <div><Loading /></div>;
   }
 
+  const lastPokemonId = 10263;
+
+  let background;
+
+  if (pokemon.types.length === 1) {
+    background = typeColors[pokemon.types[0].type.name];
+  } else if (pokemon.types.length === 2) {
+    const type1 = typeColors[pokemon.types[0].type.name];
+    const type2 = typeColors[pokemon.types[1].type.name];
+    background = `linear-gradient(to right, ${type1} 60%, ${type2})`;
+  }
+
   const imgDreamWorld = pokemon.sprites.other.dream_world.front_default;
   const imgOfficialNetwork = pokemon.sprites.other['official-artwork'].front_default;
   const imgPokemonShiny = pokemon.sprites.other.home.front_shiny;
 
   return (
-    <div className="container-pokemon-details" style={ { backgroundColor } }>
+    <div className="container-pokemon-details" style={ { background } }>
       <nav className="nav-pokemon-details">
         <button
           onClick={ () => {
@@ -119,11 +128,11 @@ function PokemonDetails() {
       </div>
       <div className="pokemon-infos-details-container">
         <div className="pokemons-other-details">
-          <p>
+          <div className="type-pokemon-details" style={ { background } }>
             Tipo:
             {' '}
             {pokemon.types.map((type) => type.type.name).join(', ')}
-          </p>
+          </div>
           <p>
             Peso:
             {' '}
@@ -177,6 +186,13 @@ function PokemonDetails() {
           })}
           {Object.keys(pokemon.sprites.other).map((sprite) => {
             const imageUrl = pokemon.sprites.other[sprite].front_default;
+            if (typeof imageUrl === 'string' && imageUrl.trim() !== '') {
+              return <img key={ sprite } src={ imageUrl } alt={ sprite } />;
+            }
+            return null;
+          })}
+          {Object.keys(pokemon.sprites.other).map((sprite) => {
+            const imageUrl = pokemon.sprites.other[sprite].front_shiny;
             if (typeof imageUrl === 'string' && imageUrl.trim() !== '') {
               return <img key={ sprite } src={ imageUrl } alt={ sprite } />;
             }
