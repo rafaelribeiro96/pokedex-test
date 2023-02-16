@@ -6,6 +6,7 @@ import './PokemonDetails.css';
 import Loading from '../components/Loading';
 import Footer from '../components/Footer';
 
+const TEN = 10;
 const typeColors = {
   grass: '#78C850',
   fire: '#F08030',
@@ -122,12 +123,16 @@ function PokemonDetails() {
           <p>
             Peso:
             {' '}
-            {pokemon.weight}
+            {pokemon.weight / TEN }
+            {' '}
+            kg
           </p>
           <p>
             Altura:
             {' '}
-            {pokemon.height}
+            {pokemon.height / TEN }
+            {' '}
+            m
           </p>
         </div>
         <img
