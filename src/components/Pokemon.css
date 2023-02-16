@@ -23,6 +23,11 @@
   width: 100%;
 }
 
+.pokemon-card-grid:hover {
+  filter: brightness(1.15);
+  transition: 0.1s;
+}
+
 .pokemon-image-grid {
   align-items: center;
   display: flex;
