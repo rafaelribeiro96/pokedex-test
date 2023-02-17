@@ -8,8 +8,8 @@ import Footer from '../components/Footer';
 import PokemonNavigation from '../components/PokemonNavigation';
 import SpritesDetails from '../components/SpritesDetails';
 import StatsPokemon from '../components/StatsPokemon';
+import InfosPokemons from '../components/InfosPokemons';
 
-const TEN = 10;
 const typeColors = {
   grass: '#78C850',
   fire: '#F08030',
@@ -50,7 +50,6 @@ function PokemonDetails() {
   }
 
   let background;
-
   if (pokemon.types.length === 1) {
     background = typeColors[pokemon.types[0].type.name];
   } else if (pokemon.types.length === 2) {
@@ -90,33 +89,9 @@ function PokemonDetails() {
         </label>
 
       </div>
-      <div className="pokemon-infos-details-container">
-        <div className="pokemons-other-details">
-          <div className="type-pokemon-details" style={ { background } }>
-            Tipo:
-            {' '}
-            {pokemon.types.map((type) => type.type.name).join(', ')}
-          </div>
-          <p>
-            Peso:
-            {' '}
-            {pokemon.weight / TEN }
-            {' '}
-            kg
-          </p>
-          <p>
-            Altura:
-            {' '}
-            {pokemon.height / TEN }
-            {' '}
-            m
-          </p>
-          <p>
-            Habilidades:
-            {' '}
-            {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}
-          </p>
-        </div>
+      <div className="pokemon-infos-stats-container">
+        <InfosPokemons pokemon={ pokemon } background={ background } />
+
         <img
           className="img-details"
           src={ shiny ? imgPokemonShiny : (imgDreamWorld || imgOfficialNetwork) }
