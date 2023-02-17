@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Pagination.css';
 
 function Pagination(props) {
@@ -47,3 +47,11 @@ function Pagination(props) {
 }
 
 export default Pagination;
+
+Pagination.propTypes = {
+  page: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  onLeftClick: PropTypes.func.isRequired,
+  onRightClick: PropTypes.func.isRequired,
+  setPage: PropTypes.func.isRequired,
+};

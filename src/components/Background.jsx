@@ -1,6 +1,5 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const typeColors = {
   grass: '#78C850',
@@ -26,6 +25,7 @@ const typeColors = {
 function Background(props) {
   const { types } = props;
   const { propsClass } = props;
+  const { children } = props;
   let background;
 
   if (types.length === 1) {
@@ -38,9 +38,21 @@ function Background(props) {
 
   return (
     <div style={ { background } } className={ propsClass }>
-      {props.children}
+      {children}
     </div>
   );
 }
 
 export default Background;
+
+Background.propTypes = {
+  types: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  ).isRequired,
+  propsClass: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};

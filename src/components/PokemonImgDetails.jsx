@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PokemonImgDetails.css';
 
 function ImgDetails(props) {
@@ -20,3 +20,23 @@ function ImgDetails(props) {
 }
 
 export default ImgDetails;
+
+ImgDetails.propTypes = {
+  pokemon: PropTypes.shape({
+    sprites: PropTypes.shape({
+      other: PropTypes.shape({
+        dream_world: PropTypes.shape({
+          front_default: PropTypes.string.isRequired,
+        }).isRequired,
+        'official-artwork': PropTypes.shape({
+          front_default: PropTypes.string.isRequired,
+        }).isRequired,
+        home: PropTypes.shape({
+          front_shiny: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  shiny: PropTypes.bool.isRequired,
+};

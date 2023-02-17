@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ShinyButton.css';
 
 function ShinyButton(props) {
@@ -22,3 +22,8 @@ function ShinyButton(props) {
 }
 
 export default ShinyButton;
+
+ShinyButton.propTypes = {
+  shiny: PropTypes.bool.isRequired,
+  setShiny: PropTypes.func.isRequired,
+};

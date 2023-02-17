@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonNavigation.css';
 
@@ -114,3 +114,7 @@ function PokemonNavigation({ pokemonId }) {
 }
 
 export default PokemonNavigation;
+
+PokemonNavigation.propTypes = {
+  pokemonId: PropTypes.string.isRequired,
+};

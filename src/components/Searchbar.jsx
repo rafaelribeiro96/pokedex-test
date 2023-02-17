@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Searchbar.css';
 
 function Searchbar(props) {
@@ -50,3 +50,7 @@ function Searchbar(props) {
 }
 
 export default Searchbar;
+
+Searchbar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Pokemon.css';
 import Background from './Background';
 
@@ -36,3 +36,18 @@ function Pokemon(props) {
 }
 
 export default Pokemon;
+
+Pokemon.propTypes = {
+  pokemon: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    sprites: PropTypes.shape({
+      front_default: PropTypes.string.isRequired,
+    }).isRequired,
+    types: PropTypes.arrayOf(PropTypes.shape({
+      type: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+    })).isRequired,
+  }).isRequired,
+};

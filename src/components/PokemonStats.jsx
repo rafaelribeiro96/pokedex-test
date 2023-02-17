@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PokemonStats.css';
 
 function PokemonStats({ pokemon }) {
@@ -21,3 +21,14 @@ function PokemonStats({ pokemon }) {
 }
 
 export default PokemonStats;
+
+PokemonStats.propTypes = {
+  pokemon: PropTypes.shape({
+    stats: PropTypes.arrayOf(PropTypes.shape({
+      stat: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+      base_stat: PropTypes.number.isRequired,
+    })).isRequired,
+  }).isRequired,
+};
