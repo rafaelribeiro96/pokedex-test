@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonNavigation.css';
 
 function PokemonNavigation({ pokemonId }) {
   const navigate = useNavigate();
-  const [backPokemon, setBackPokemon] = React.useState(null);
-  const [backPokemonImageUrl, setBackPokemonImageUrl] = React.useState(null);
-  const [nextPokemon, setNextPokemon] = React.useState(null);
-  const [nextPokemonImageUrl, setNextPokemonImageUrl] = React.useState(null);
+  const [backPokemon, setBackPokemon] = useState(null);
+  const [backPokemonImageUrl, setBackPokemonImageUrl] = useState(null);
+  const [nextPokemon, setNextPokemon] = useState(null);
+  const [nextPokemonImageUrl, setNextPokemonImageUrl] = useState(null);
 
   const lastPokemonId = 10263;
   const firstPokemonId = 1;
 
-  React.useEffect(() => {
+  useEffect(() => {
     let backPokemonId;
     if (pokemonId === '10001') {
       backPokemonId = '1008';
@@ -36,7 +36,7 @@ function PokemonNavigation({ pokemonId }) {
     fetchBackPokemon();
   }, [pokemonId]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let nextPokemonId;
     if (pokemonId === '1008') {
       nextPokemonId = '10001';
