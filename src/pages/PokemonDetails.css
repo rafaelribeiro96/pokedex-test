@@ -8,9 +8,24 @@
   font-family: VT323 , monospace;
 }
 
+.pokemon-infos-stats-container {
+  align-items: center;
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
 
 .loading {
   font-size: 30px;
   margin-top: 50px;
 }
 
+
+@media ( max-width : 850px ) {
+
+  .pokemon-infos-stats-container {
+    align-items: center;
+    flex-direction: column;
+  }
+}

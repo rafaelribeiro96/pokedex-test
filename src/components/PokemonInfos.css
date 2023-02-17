@@ -1,11 +1,3 @@
-.pokemon-infos-stats-container {
-  align-items: center;
-  display: flex;
-  flex-direction: wrap;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
 .pokemon-info-stats {
   align-items: center;
   display: flex;

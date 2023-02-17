@@ -43,7 +43,6 @@ function PokemonDetails() {
         <PokemonInfos pokemon={ pokemon } />
         <PokemonImgDetails pokemon={ pokemon } shiny={ shiny } />
         <PokemonStats pokemon={ pokemon } />
-
       </div>
       <PokemonSprites pokemon={ pokemon } shiny={ shiny } />
       <Footer />
