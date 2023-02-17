@@ -41,31 +41,25 @@ function Home() {
     if (!pokemon) {
       return fetchPokemons();
     }
-    if (!Number.isNaN(Number(pokemon))) {
-      setLoading(true);
-      setNotFound(false);
-      const result = await searchPokemon(pokemon);
-      if (!result) {
-        setNotFound(true);
-      } else {
-        setPokemons([result]);
-        setPage(0);
-        setTotalPages(1);
-      }
-      setLoading(false);
+    setLoading(true);
+    setNotFound(false);
+    let result;
+    if (!pokemon) {
+      result = await fetchPokemons();
     } else {
-      setLoading(true);
-      setNotFound(false);
-      const result = await searchPokemonForName(pokemon);
-      if (!result) {
-        setNotFound(true);
-      } else {
-        setPokemons([result]);
-        setPage(0);
-        setTotalPages(1);
-      }
-      setLoading(false);
+      result = await (Number.isNaN(Number(pokemon))
+        ? searchPokemonForName(pokemon) : searchPokemon(pokemon));
     }
+    if (!result || result.length === 0) {
+      setNotFound(true);
+      setPokemons([]);
+    } else {
+      setNotFound(false);
+      setPokemons([result]);
+      setPage(0);
+      setTotalPages(1);
+    }
+    setLoading(false);
   };
 
   useEffect(() => {
