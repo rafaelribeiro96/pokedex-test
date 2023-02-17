@@ -28,13 +28,6 @@
 }
 
 
-.div-sprites img {
-  margin: 10px;
-  transition: all 0.5s ease-in-out;
-  width: 80px;
-}
-
-
 .loading {
   font-size: 30px;
   margin-top: 50px;
@@ -154,21 +147,6 @@
   width: 10px;
 }
 
-.div-sprites {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 80px;
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-
-.div-sprites img:hover {
-  filter: brightness(1.15);
-  transform: scale(2);
-}
 
 @media ( max-width : 850px ) {
 

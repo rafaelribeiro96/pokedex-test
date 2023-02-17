@@ -6,6 +6,7 @@ import './PokemonDetails.css';
 import Loading from '../components/Loading';
 import Footer from '../components/Footer';
 import PokemonNavigation from '../components/PokemonNavigation';
+import SpritesDetails from '../components/SpritesDetails';
 
 const TEN = 10;
 const typeColors = {
@@ -136,31 +137,9 @@ function PokemonDetails() {
         </div>
 
       </div>
-      <div className="div-sprites">
-        <div>
-          {Object.keys(pokemon.sprites).map((sprite) => {
-            const imageUrl = pokemon.sprites[sprite];
-            if (typeof imageUrl === 'string' && imageUrl.trim() !== '') {
-              return <img key={ sprite } src={ imageUrl } alt={ sprite } />;
-            }
-            return null;
-          })}
-          {Object.keys(pokemon.sprites.other).map((sprite) => {
-            const imageUrl = pokemon.sprites.other[sprite].front_default;
-            if (typeof imageUrl === 'string' && imageUrl.trim() !== '') {
-              return <img key={ sprite } src={ imageUrl } alt={ sprite } />;
-            }
-            return null;
-          })}
-          {Object.keys(pokemon.sprites.other).map((sprite) => {
-            const imageUrl = pokemon.sprites.other[sprite].front_shiny;
-            if (typeof imageUrl === 'string' && imageUrl.trim() !== '') {
-              return <img key={ sprite } src={ imageUrl } alt={ sprite } />;
-            }
-            return null;
-          })}
-        </div>
-      </div>
+
+      <SpritesDetails pokemon={ pokemon } />
+
       <Footer />
     </div>
   );
