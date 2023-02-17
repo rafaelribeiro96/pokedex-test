@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './InfosPokemons.css';
+import './PokemonInfos.css';
 
 const TEN = 10;
 
-function InfosPokemons(props) {
+function PokemonInfos(props) {
   const { pokemon } = props;
 
   return (
@@ -37,4 +37,4 @@ function InfosPokemons(props) {
   );
 }
 
-export default InfosPokemons;
+export default PokemonInfos;

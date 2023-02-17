@@ -8,14 +8,6 @@
   font-family: VT323 , monospace;
 }
 
-.title-pokemon-details {
-  font-family: VT323 , monospace;
-  font-size: 50px;
-}
-
-.title-pokemon-details:first-letter {
-  text-transform: uppercase;
-}
 
 .loading {
   font-size: 30px;

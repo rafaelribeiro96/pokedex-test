@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './Shiny.css';
+import './ShinyButton.css';
 
-function Shiny(props) {
+function ShinyButton(props) {
   const { shiny, setShiny } = props;
 
   return (
@@ -21,4 +21,4 @@ function Shiny(props) {
   );
 }
 
-export default Shiny;
+export default ShinyButton;

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './StatsPokemon.css';
+import './PokemonStats.css';
 
-function StatsPokemon({ pokemon }) {
+function PokemonStats({ pokemon }) {
   return (
     <div className="stats-pokemons">
       {pokemon.stats.map((stat) => (
@@ -20,4 +20,4 @@ function StatsPokemon({ pokemon }) {
   );
 }
 
-export default StatsPokemon;
+export default PokemonStats;

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './SpritesDetails.css';
+import './PokemonSprites.css';
 
-function SpritesDetails({ pokemon }) {
+function PokemonSprites({ pokemon }) {
   return (
     <div className="div-sprites">
       <div>
@@ -32,4 +32,4 @@ function SpritesDetails({ pokemon }) {
   );
 }
 
-export default SpritesDetails;
+export default PokemonSprites;

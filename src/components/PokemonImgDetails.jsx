@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './ImgDetails.css';
+import './PokemonImgDetails.css';
 
 function ImgDetails(props) {
   const { pokemon } = props;

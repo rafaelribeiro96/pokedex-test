@@ -1,17 +1,17 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonDetails.css';
 import Loading from '../components/Loading';
-import Footer from '../components/Footer';
-import PokemonNavigation from '../components/PokemonNavigation';
-import SpritesDetails from '../components/SpritesDetails';
-import StatsPokemon from '../components/StatsPokemon';
-import InfosPokemons from '../components/InfosPokemons';
-import ImgDetails from '../components/ImgDetails';
-import Shiny from '../components/Shiny';
 import Background from '../components/Background';
+import PokemonNavigation from '../components/PokemonNavigation';
+import TitlePokemon from '../components/TitlePokemon';
+import ShinyButton from '../components/ShinyButton';
+import PokemonInfos from '../components/PokemonInfos';
+import PokemonStats from '../components/PokemonStats';
+import PokemonSprites from '../components/PokemonSprites';
+import Footer from '../components/Footer';
+import PokemonImgDetails from '../components/PokemonImgDetails';
 
 function PokemonDetails() {
   const { pokemonId } = useParams();
@@ -33,34 +33,21 @@ function PokemonDetails() {
 
   return (
     <Background types={ pokemon.types } propsClass="container-pokemon-details">
-
       <PokemonNavigation pokemonId={ pokemonId } />
 
-      <h1 className="title-pokemon-details">
-        {pokemon.name}
-        {' '}
-        #
-        {' '}
-        {pokemon.id}
-      </h1>
+      <TitlePokemon pokemon={ pokemon } />
 
-      <Shiny shiny={ shiny } setShiny={ setShiny } />
+      <ShinyButton shiny={ shiny } setShiny={ setShiny } />
 
       <div className="pokemon-infos-stats-container">
-        <InfosPokemons pokemon={ pokemon } />
-
-        <ImgDetails pokemon={ pokemon } shiny={ shiny } />
-
-        <StatsPokemon pokemon={ pokemon } />
+        <PokemonInfos pokemon={ pokemon } />
+        <PokemonImgDetails pokemon={ pokemon } shiny={ shiny } />
+        <PokemonStats pokemon={ pokemon } />
 
       </div>
-
-      <SpritesDetails pokemon={ pokemon } />
-
+      <PokemonSprites pokemon={ pokemon } shiny={ shiny } />
       <Footer />
-
     </Background>
-
   );
 }
 
