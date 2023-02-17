@@ -45,43 +45,62 @@ function PokemonDetails() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await searchPokemon(pokemonId);
+      console.log(pokemonId);
       setPokemon(data);
     };
     fetchData();
   }, [pokemonId]);
 
-  const nextPokemonId = parseInt(pokemonId, 10) + 1;
-  const backPokemonId = parseInt(pokemonId, 10) - 1;
+  const lastPokemonId = 10263;
+  const firstPokemonId = 1;
 
-  useEffect(() => {
-    const fetchNextPokemon = async () => {
-      const data = await searchPokemon(nextPokemonId);
-      setNextPokemon(data);
+  let backPokemonId;
+  if (pokemonId === '10001') {
+    backPokemonId = '1008';
+  } else if (pokemonId > 1) {
+    backPokemonId = parseInt(pokemonId, 10) - 1;
+  } else {
+    backPokemonId = lastPokemonId;
+  }
 
-      const imageUrl = data.sprites.other['official-artwork'].front_default;
-      setNextPokemonImageUrl(imageUrl);
-    };
-
-    fetchNextPokemon();
-  }, [nextPokemonId]);
+  let nextPokemonId;
+  if (pokemonId === '1008') {
+    nextPokemonId = '10001';
+  } else if (pokemonId < lastPokemonId) {
+    nextPokemonId = parseInt(pokemonId, 10) + 1;
+  } else {
+    nextPokemonId = firstPokemonId;
+  }
 
   useEffect(() => {
     const fetchBackPokemon = async () => {
       const data = await searchPokemon(backPokemonId);
-      setBackPokemon(data);
-
-      const imageUrl = data.sprites.other['official-artwork'].front_default;
-      setBackPokemonImageUrl(imageUrl);
+      if (data) {
+        setBackPokemon(data);
+        const imageUrl = data.sprites.other['official-artwork'].front_default;
+        setBackPokemonImageUrl(imageUrl);
+      }
     };
 
     fetchBackPokemon();
   }, [backPokemonId]);
 
+  useEffect(() => {
+    const fetchNextPokemon = async () => {
+      const data = await searchPokemon(nextPokemonId);
+      if (data) {
+        setNextPokemon(data);
+        const imageUrl = data.sprites.other['official-artwork'].front_default;
+        setNextPokemonImageUrl(imageUrl);
+      }
+    };
+
+    fetchNextPokemon();
+  }, [nextPokemonId]);
+
   if (!pokemon) {
     return <div><Loading /></div>;
   }
-
-  const lastPokemonId = 10263;
 
   let background;
 
@@ -97,21 +116,18 @@ function PokemonDetails() {
   const imgOfficialNetwork = pokemon.sprites.other['official-artwork'].front_default;
   const imgPokemonShiny = pokemon.sprites.other.home.front_shiny;
 
-  // Define o estado do próximo Pokémon e da imagem a ser exibida
-
-  // Renderiza o componente
   return (
     <div className="container-pokemon-details" style={ { background } }>
       <nav className="nav-pokemon-details">
 
         <button
           onClick={ () => {
-            if (pokemonId === '1') {
-              navigate(`/pokemon/${lastPokemonId}`);
-            } else if (pokemonId > 1) {
+            if (pokemonId === '10001') {
+              navigate('/pokemon/1008');
+            } else if (pokemonId > firstPokemonId) {
               navigate(`/pokemon/${parseInt(pokemonId, 10) - 1}`);
             } else {
-              navigate('/pokemon/1');
+              navigate(`/pokemon/${lastPokemonId}`);
             }
           } }
           type="button"
@@ -139,7 +155,7 @@ function PokemonDetails() {
             } else if (pokemonId < lastPokemonId) {
               navigate(`/pokemon/${parseInt(pokemonId, 10) + 1}`);
             } else {
-              navigate('/pokemon/1');
+              navigate(`/pokemon/${firstPokemonId}`);
             }
           } }
           type="button"
@@ -223,7 +239,6 @@ function PokemonDetails() {
 
       </div>
       <div className="div-sprites">
-        <h1>Outras versões:</h1>
         <div>
           {Object.keys(pokemon.sprites).map((sprite) => {
             const imageUrl = pokemon.sprites[sprite];

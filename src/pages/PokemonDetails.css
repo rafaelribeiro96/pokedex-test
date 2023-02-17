@@ -33,6 +33,12 @@
 }
 
 
+.div-sprites img {
+  margin: 10px;
+  transition: all 0.5s ease-in-out;
+  width: 80px;
+}
+
 .next-pokemon-img img:hover {
   filter: opacity(1);
 }
@@ -81,6 +87,11 @@
   transition: all 0.3s ease;
 }
 
+.btn-next-back:hover {
+  filter: brightness(1.05);
+  transition: all 0.3s ease;
+}
+
 .loading {
   font-size: 30px;
   margin-top: 50px;
@@ -99,7 +110,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 10%;
+  width: 15%;
 }
 
 .type-pokemon-details {
@@ -135,7 +146,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 10%;
+  width: 15%;
 }
 
 
@@ -208,12 +219,6 @@
   margin-top: 20px;
   text-align: center;
   width: 100%;
-}
-
-.div-sprites img {
-  margin: 10px;
-  transition: all 0.5s ease-in-out;
-  width: 80px;
 }
 
 
