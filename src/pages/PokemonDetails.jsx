@@ -1,13 +1,11 @@
-/* eslint-disable max-lines */
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { searchPokemon } from '../services/apiPokemon';
 import './PokemonDetails.css';
 import Loading from '../components/Loading';
 import Footer from '../components/Footer';
+import PokemonNavigation from '../components/PokemonNavigation';
 
 const TEN = 10;
 const typeColors = {
@@ -33,70 +31,17 @@ const typeColors = {
 
 function PokemonDetails() {
   const { pokemonId } = useParams();
-  const navigate = useNavigate();
 
   const [pokemon, setPokemon] = useState(null);
   const [shiny, setShiny] = useState(false);
-  const [nextPokemon, setNextPokemon] = useState(null);
-  const [nextPokemonImageUrl, setNextPokemonImageUrl] = useState(null);
-  const [backPokemon, setBackPokemon] = useState(null);
-  const [backPokemonImageUrl, setBackPokemonImageUrl] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await searchPokemon(pokemonId);
-      console.log(pokemonId);
       setPokemon(data);
     };
     fetchData();
   }, [pokemonId]);
-
-  const lastPokemonId = 10263;
-  const firstPokemonId = 1;
-
-  let backPokemonId;
-  if (pokemonId === '10001') {
-    backPokemonId = '1008';
-  } else if (pokemonId > 1) {
-    backPokemonId = parseInt(pokemonId, 10) - 1;
-  } else {
-    backPokemonId = lastPokemonId;
-  }
-
-  let nextPokemonId;
-  if (pokemonId === '1008') {
-    nextPokemonId = '10001';
-  } else if (pokemonId < lastPokemonId) {
-    nextPokemonId = parseInt(pokemonId, 10) + 1;
-  } else {
-    nextPokemonId = firstPokemonId;
-  }
-
-  useEffect(() => {
-    const fetchBackPokemon = async () => {
-      const data = await searchPokemon(backPokemonId);
-      if (data) {
-        setBackPokemon(data);
-        const imageUrl = data.sprites.other['official-artwork'].front_default;
-        setBackPokemonImageUrl(imageUrl);
-      }
-    };
-
-    fetchBackPokemon();
-  }, [backPokemonId]);
-
-  useEffect(() => {
-    const fetchNextPokemon = async () => {
-      const data = await searchPokemon(nextPokemonId);
-      if (data) {
-        setNextPokemon(data);
-        const imageUrl = data.sprites.other['official-artwork'].front_default;
-        setNextPokemonImageUrl(imageUrl);
-      }
-    };
-
-    fetchNextPokemon();
-  }, [nextPokemonId]);
 
   if (!pokemon) {
     return <div><Loading /></div>;
@@ -118,57 +63,10 @@ function PokemonDetails() {
 
   return (
     <div className="container-pokemon-details" style={ { background } }>
-      <nav className="nav-pokemon-details">
 
-        <button
-          onClick={ () => {
-            if (pokemonId === '10001') {
-              navigate('/pokemon/1008');
-            } else if (pokemonId > firstPokemonId) {
-              navigate(`/pokemon/${parseInt(pokemonId, 10) - 1}`);
-            } else {
-              navigate(`/pokemon/${lastPokemonId}`);
-            }
-          } }
-          type="button"
-          className="btn-next-back"
-        >
-          {backPokemonImageUrl && (
-            <div className="next-pokemon-img">
-              <img src={ backPokemonImageUrl } alt={ backPokemon.name } />
-            </div>
-          )}
-        </button>
-
-        <button
-          onClick={ () => navigate('/') }
-          type="button"
-          className="btn-back"
-        >
-          VOLTAR PARA A POKEDEX
-        </button>
-
-        <button
-          onClick={ () => {
-            if (pokemonId === '1008') {
-              navigate('/pokemon/10001');
-            } else if (pokemonId < lastPokemonId) {
-              navigate(`/pokemon/${parseInt(pokemonId, 10) + 1}`);
-            } else {
-              navigate(`/pokemon/${firstPokemonId}`);
-            }
-          } }
-          type="button"
-          className="btn-next-back"
-        >
-          {nextPokemonImageUrl && (
-            <div className="next-pokemon-img">
-              <img src={ nextPokemonImageUrl } alt={ nextPokemon.name } />
-            </div>
-          )}
-        </button>
-
-      </nav>
+      <PokemonNavigation
+        pokemonId={ pokemonId }
+      />
 
       <h1 className="title-pokemon-details">
         {pokemon.name}
