@@ -10,11 +10,6 @@ function Pagination(props) {
     localStorage.setItem('pokedexPage', 0);
   };
 
-  /* const goToLastPage = () => {
-    setPage(totalPages - 1);
-    localStorage.setItem('pokedexPage', 0);
-  }; */
-
   return (
     <nav className="pagination-container">
       <button
