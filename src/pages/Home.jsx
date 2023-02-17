@@ -1,30 +1,38 @@
+/* eslint-disable max-len */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
-import { getPokemonData, getPokemons,
-  searchPokemonForName, searchPokemon } from '../services/apiPokemon';
+import { getPokemonData, getPokemons, searchPokemonForName, searchPokemon, searchPokemonByType } from '../services/apiPokemon';
 import './Home.css';
 import NotFound from '../components/NotFound';
+import SearchByType from '../components/SearchByType';
 
 function Home() {
-  const [page, setPage] = useState(
-    Number(localStorage.getItem('pokedexPage')) || 0,
-  );
+  const [page, setPage] = useState(Number(localStorage.getItem('pokedexPage')) || 0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
+  const [type, setType] = useState('');
 
-  const pokemonsForPage = 30;
+  const pokemonByPage = 30;
 
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await getPokemons(pokemonsForPage, pokemonsForPage * page);
-      setTotalPages(Math.ceil(data.count / pokemonsForPage));
+      let data;
+      if (type) {
+        data = await searchPokemonByType(type, pokemonByPage, page);
+        console.log('data', data);
+        setTotalPages(1);
+      } else {
+        data = await getPokemons(pokemonByPage, pokemonByPage * page);
+        setTotalPages(Math.ceil(data.count / pokemonByPage));
+      }
       const promises = data.results.map((pokemon) => getPokemonData(pokemon.url));
+      console.log('promises', promises);
       const response = await Promise.all(promises);
       setPokemons(response);
       setLoading(false);
@@ -35,7 +43,7 @@ function Home() {
 
   useEffect(() => {
     fetchPokemons();
-  }, [page]);
+  }, [page, type]);
 
   const onSearchHandler = async (pokemon) => {
     if (!pokemon) {
@@ -69,6 +77,10 @@ function Home() {
   return (
     <div className="home-container">
       <Searchbar onSearch={ onSearchHandler } />
+      <SearchByType
+        setType={ setType }
+        setPage={ setPage }
+      />
       {notFound ? (
         <NotFound />
       ) : (

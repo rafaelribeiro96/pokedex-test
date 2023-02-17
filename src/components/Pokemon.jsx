@@ -42,7 +42,7 @@ Pokemon.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     sprites: PropTypes.shape({
-      front_default: PropTypes.string.isRequired,
+      front_default: PropTypes.string,
     }).isRequired,
     types: PropTypes.arrayOf(PropTypes.shape({
       type: PropTypes.shape({
