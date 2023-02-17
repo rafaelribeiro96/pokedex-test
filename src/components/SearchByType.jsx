@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './SearchByType.css';
 
 const pokemonTypes = [
   'normal',
@@ -39,18 +40,20 @@ function SearchByType({ setType, setPage }) {
   };
 
   return (
-    <div className="flex justify-center p-2">
+    <div className="search-by-type">
+      <h3>Tipo do Pokemon:</h3>
       <select
         onChange={ handleChange }
         data-testid="filter-select"
+        className="select-type"
       >
-        <option value="">All</option>
+        <option value="">Todos</option>
         {pokemonTypes.map((type) => (
           <option
             value={ type }
             key={ type }
             data-testid={ type }
-            className="capitalize"
+            className="option-type"
           >
             {type.charAt(0).toUpperCase() + type.slice(1)}
           </option>

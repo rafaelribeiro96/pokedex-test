@@ -1,0 +1,104 @@
+.search-by-type {
+  align-items: center;
+  color: #333;
+  display: flex;
+  font-family: VT323 , monospace;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-by-type h3 {
+  font-size: 26px;
+}
+
+.select-type {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-family: VT323 , monospace;
+  font-size: 22px;
+  padding: 5px;
+  text-align: center;
+  text-align-last: center;
+}
+
+.option-type {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.option-type[ value = 'normal' ] {
+  background-color: rgb(168, 168, 120, 0.5);
+}
+
+.option-type[ value = 'fire' ] {
+  background-color: rgb(240, 128, 48, 0.5);
+}
+
+.option-type[ value = 'fighting' ] {
+  background-color: rgb(192, 48, 40, 0.5);
+}
+
+.option-type[ value = 'water' ] {
+  background-color: rgb(104, 144, 240, 0.5);
+}
+
+.option-type[ value = 'flying' ] {
+  background-color: rgb(168, 144, 240, 0.5);
+}
+
+.option-type[ value = 'grass' ] {
+  background-color: rgb(120, 200, 80, 0.5);
+}
+
+.option-type[ value = 'poison' ] {
+  background-color: rgb(160, 64, 160, 0.5);
+}
+
+.option-type[ value = 'electric' ] {
+  background-color: rgb(248, 208, 48, 0.5);
+}
+
+.option-type[ value = 'ground' ] {
+  background-color: rgb(224, 192, 104, 0.5);
+}
+
+.option-type[ value = 'psychic' ] {
+  background-color: rgb(248, 88, 136, 0.5);
+}
+
+.option-type[ value = 'rock' ] {
+  background-color: rgb(184, 160, 56, 0.5);
+}
+
+.option-type[ value = 'ice' ] {
+  background-color: rgb(152, 216, 216, 0.5);
+}
+
+.option-type[ value = 'bug' ] {
+  background-color: rgb(169, 184, 33, 0.5);
+}
+
+.option-type[ value = 'dragon' ] {
+  background-color: rgb(112, 56, 248, 0.5);
+}
+
+.option-type[ value = 'ghost' ] {
+  background-color: rgb(112, 88, 152, 0.5);
+}
+
+.option-type[ value = 'dark' ] {
+  background-color: rgb(112, 88, 72, 0.5);
+}
+
+.option-type[ value = 'steel' ] {
+  background-color: rgb(184, 184, 208, 0.5);
+}
+
+.option-type[ value = 'fairy' ] {
+  background-color: rgb(238, 153, 172, 0.5);
+}
+
