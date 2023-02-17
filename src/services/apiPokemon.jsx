@@ -28,10 +28,7 @@ export const searchPokemonByType = async (type) => {
   const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
   if (response.status === erroNumber200) {
     const data = await response.json();
-    return {
-      results: (data.pokemon.map((entry) => entry.pokemon)),
-      count: data.pokemon.length,
-    };
+    return data.pokemon.map((p) => p.pokemon);
   }
   return null;
 };

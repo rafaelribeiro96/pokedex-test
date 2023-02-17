@@ -25,15 +25,21 @@ function Home() {
       let data;
       if (type) {
         data = await searchPokemonByType(type);
-        setTotalPages(1);
+        setTotalPages(Math.ceil(data.length / pokemonByPage));
+        const start = pokemonByPage * page;
+        const end = start + pokemonByPage;
+        const promises = data.slice(start, end).map((pokemon) => getPokemonData(pokemon.url));
+        const response = await Promise.all(promises);
+        setPokemons(response);
+        setLoading(false);
       } else {
         data = await getPokemons(pokemonByPage, pokemonByPage * page);
         setTotalPages(Math.ceil(data.count / pokemonByPage));
+        const promises = data.results.map((pokemon) => getPokemonData(pokemon.url));
+        const response = await Promise.all(promises);
+        setPokemons(response);
+        setLoading(false);
       }
-      const promises = data.results.map((pokemon) => getPokemonData(pokemon.url));
-      const response = await Promise.all(promises);
-      setPokemons(response);
-      setLoading(false);
     } catch (error) {
       console.log('fetchPokemons error: ', error);
     }
