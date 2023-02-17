@@ -67,7 +67,7 @@ function Home() {
       setPokemons([]);
     } else {
       setNotFound(false);
-      setPokemons([result]);
+      setPokemons(result);
       setPage(0);
       setTotalPages(1);
     }
