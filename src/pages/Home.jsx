@@ -24,15 +24,13 @@ function Home() {
       setLoading(true);
       let data;
       if (type) {
-        data = await searchPokemonByType(type, pokemonByPage, page);
-        console.log('data', data);
+        data = await searchPokemonByType(type);
         setTotalPages(1);
       } else {
         data = await getPokemons(pokemonByPage, pokemonByPage * page);
         setTotalPages(Math.ceil(data.count / pokemonByPage));
       }
       const promises = data.results.map((pokemon) => getPokemonData(pokemon.url));
-      console.log('promises', promises);
       const response = await Promise.all(promises);
       setPokemons(response);
       setLoading(false);
