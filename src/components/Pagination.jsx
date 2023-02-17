@@ -22,7 +22,7 @@ function Pagination(props) {
         className="button-first-last-page"
         onClick={ goToFirstPage }
       >
-        Primeira Página
+        Início
 
       </button>
       <button
@@ -47,13 +47,6 @@ function Pagination(props) {
       >
         <div>▶️</div>
       </button>
-      {/* <button
-        type="button"
-        className="button-first-last-page"
-        onClick={ goToLastPage }
-      >
-        Última Página
-      </button> */}
     </nav>
   );
 }
