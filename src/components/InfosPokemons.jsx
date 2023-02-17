@@ -6,11 +6,10 @@ const TEN = 10;
 
 function InfosPokemons(props) {
   const { pokemon } = props;
-  const { background } = props;
 
   return (
     <div className="pokemon-info-stats">
-      <div className="type-pokemon-details" style={ { background } }>
+      <div className="type-pokemon-details">
         Tipo:
         {' '}
         {pokemon.types.map((type) => type.type.name).join(', ')}
