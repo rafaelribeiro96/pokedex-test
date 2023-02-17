@@ -1,0 +1,33 @@
+.stats-pokemons {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 15%;
+}
+
+
+.stats-pokemons-details {
+  border-radius: 5px;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px;
+  text-align: left;
+  width: 200px;
+}
+
+.stats-pokemons-details .bar {
+  background-color: rgba(43, 43, 43, 0.493);
+  border: dotted 1px red;
+  height: 5%;
+  transition: width 0.5s;
+  width: 0;
+}
+
+@media ( max-width : 850px ) {
+
+  .stats-pokemons {
+    width: 50%;
+  }
+
+}

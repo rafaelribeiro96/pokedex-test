@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import Footer from '../components/Footer';
 import PokemonNavigation from '../components/PokemonNavigation';
 import SpritesDetails from '../components/SpritesDetails';
+import StatsPokemon from '../components/StatsPokemon';
 
 const TEN = 10;
 const typeColors = {
@@ -122,19 +123,7 @@ function PokemonDetails() {
           alt={ pokemon.name }
         />
 
-        <div className="stats-pokemons">
-          {pokemon.stats.map((stat) => (
-            <div key={ stat.stat.name } className="stats-pokemons-details">
-              <p>
-                {stat.stat.name}
-                :
-                {' '}
-                {stat.base_stat}
-              </p>
-              <div className="bar" style={ { width: `${stat.base_stat}%` } } />
-            </div>
-          ))}
-        </div>
+        <StatsPokemon pokemon={ pokemon } />
 
       </div>
 
