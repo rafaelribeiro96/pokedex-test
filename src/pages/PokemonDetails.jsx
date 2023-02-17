@@ -9,6 +9,8 @@ import PokemonNavigation from '../components/PokemonNavigation';
 import SpritesDetails from '../components/SpritesDetails';
 import StatsPokemon from '../components/StatsPokemon';
 import InfosPokemons from '../components/InfosPokemons';
+import ImgDetails from '../components/ImgDetails';
+import Shiny from '../components/Shiny';
 
 const typeColors = {
   grass: '#78C850',
@@ -58,16 +60,10 @@ function PokemonDetails() {
     background = `linear-gradient(to right, ${type1} 60%, ${type2})`;
   }
 
-  const imgDreamWorld = pokemon.sprites.other.dream_world.front_default;
-  const imgOfficialNetwork = pokemon.sprites.other['official-artwork'].front_default;
-  const imgPokemonShiny = pokemon.sprites.other.home.front_shiny;
-
   return (
     <div className="container-pokemon-details" style={ { background } }>
 
-      <PokemonNavigation
-        pokemonId={ pokemonId }
-      />
+      <PokemonNavigation pokemonId={ pokemonId } />
 
       <h1 className="title-pokemon-details">
         {pokemon.name}
@@ -76,27 +72,13 @@ function PokemonDetails() {
         {' '}
         {pokemon.id}
       </h1>
-      <div className="checkbox-container">
-        <label htmlFor="shiny" className="shiny-version">
-          Versão Shiny
-          <input
-            type="checkbox"
-            id="shiny"
-            className="shiny-checkbox"
-            checked={ shiny }
-            onChange={ () => setShiny(!shiny) }
-          />
-        </label>
 
-      </div>
+      <Shiny shiny={ shiny } setShiny={ setShiny } />
+
       <div className="pokemon-infos-stats-container">
         <InfosPokemons pokemon={ pokemon } background={ background } />
 
-        <img
-          className="img-details"
-          src={ shiny ? imgPokemonShiny : (imgDreamWorld || imgOfficialNetwork) }
-          alt={ pokemon.name }
-        />
+        <ImgDetails pokemon={ pokemon } shiny={ shiny } />
 
         <StatsPokemon pokemon={ pokemon } />
 

@@ -17,87 +17,8 @@
   text-transform: uppercase;
 }
 
-.img-details {
-  height: 400px;
-  width: 400px;
-}
-
-.img-details:hover {
-  filter: brightness(1.15);
-  transition: all 0.5s ease;
-}
-
-
 .loading {
   font-size: 30px;
   margin-top: 50px;
 }
 
-
-.type-pokemon-details {
-  background-color: #cfcfcf57;
-  border-radius: 5px;
-  display: flex;
-  filter: brightness(1.15);
-  font-size: 24px;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px;
-  width: 90%;
-}
-
-
-.checkbox-container {
-  align-items: center;
-  display: flex;
-  margin-top: 10px;
-}
-
-.shiny-version {
-  font-size: 24px;
-  margin-right: 10px;
-}
-
-.shiny-checkbox {
-  appearance: none;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 5px;
-  height: 20px;
-  margin-bottom: 0;
-  outline: none;
-  position: relative;
-  transition: all 0.3s;
-  width: 20px;
-}
-
-.shiny-checkbox:checked {
-  background-color: red;
-  border: 1px solid black;
-  border-radius: 50px;
-}
-
-.shiny-checkbox:checked:after {
-  background-color: white;
-  border-radius: 50%;
-  content: '';
-  display: block;
-  height: 10px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-}
-
-
-@media ( max-width : 850px ) {
-
-  .img-details {
-    height: 50%;
-    margin-top: 10px;
-    max-width: 500px;
-    width: 200px;
-  }
-
-}
