@@ -236,6 +236,10 @@
     width: 200px;
   }
 
+  .next-pokemon-img img {
+    width: 40px;
+  }
+
   .pokemon-infos-details-container {
     align-items: center;
     flex-direction: column;
@@ -244,7 +248,13 @@
   .pokemons-other-details {
     display: flex;
     flex-direction: wrap;
+    margin: 0;
+    padding: 0;
     width: 100%;
+  }
+
+  .stats-pokemons {
+    width: 50%;
   }
 
   .btn-back {
