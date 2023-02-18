@@ -1,4 +1,5 @@
 const limitPokemons = 30;
+const limitPokemonsG = 1230;
 const erroNumber200 = 200;
 
 export const searchPokemon = async (pokemon) => {
@@ -10,7 +11,7 @@ export const searchPokemon = async (pokemon) => {
 };
 
 export const searchPokemonForName = async (searchTerm) => {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitPokemons}`);
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitPokemonsG}`);
   if (response.status === erroNumber200) {
     const pokemons = await response.json();
     const filteredPokemons = pokemons.results
