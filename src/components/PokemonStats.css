@@ -67,12 +67,20 @@
 
 @media ( max-width : 850px ) {
 
-  .stats-pokemons {
-    width: 50%;
+  .stats-pokemons-details {
+    font-size: 18px;
+    height: 30px;
+    line-height: 20px;
+    margin: 10px 0;
+    text-align: left;
+    width: 45%;
   }
 
-}
+  .stats-pokemons {
+    flex-flow: wrap;
+    justify-content: space-around;
+    padding: 0;
+    width: 100%;
+  }
 
-.option-type[ value = 'normal' ] {
-  background-color: rgb(168, 168, 120, 0.5);
 }
