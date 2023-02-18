@@ -41,3 +41,23 @@
   width: 10px;
 }
 
+@media ( max-width : 850px ) {
+
+  .checkbox-container {
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    width: 100%;
+  }
+
+  .shiny-version {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .shiny-checkbox {
+    height: 15px;
+    width: 15px;
+  }
+}
+

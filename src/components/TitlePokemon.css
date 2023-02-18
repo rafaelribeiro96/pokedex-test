@@ -6,3 +6,17 @@
 .title-pokemon-details:first-letter {
   text-transform: uppercase;
 }
+
+@media ( max-width : 850px ) {
+
+  .title-pokemon-details {
+    font-size: 40px;
+  }
+}
+
+@media ( max-width : 650px ) {
+
+  .title-pokemon-details {
+    font-size: 35px;
+  }
+}
