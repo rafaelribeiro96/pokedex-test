@@ -10,3 +10,14 @@
 .pagination-bottom {
   margin-bottom: 100px;
 }
+
+@media ( min-width : 620px ) {
+
+  .pokedex-grid {
+    margin-bottom: 100px;
+  }
+
+  .pagination-bottom {
+    display: none;
+  }
+}
