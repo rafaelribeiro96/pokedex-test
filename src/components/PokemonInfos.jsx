@@ -29,7 +29,7 @@ function PokemonInfos(props) {
         {' '}
         {pokemon.types.map((type) => type.type.name).join(', ')}
       </p>
-      <p className="type-pokemon-details cor-response-1">
+      <p className="type-pokemon-details details-ability cor-response-1">
         Habilidades:
         {' '}
         {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}
