@@ -6,14 +6,22 @@ function PokemonStats({ pokemon }) {
   return (
     <div className="stats-pokemons">
       {pokemon.stats.map((stat) => (
-        <div key={ stat.stat.name } className="stats-pokemons-details">
+        <div
+          key={ stat.stat.name }
+          className="stats-pokemons-details"
+
+        >
           <p>
             {stat.stat.name}
             :
             {' '}
             {stat.base_stat}
           </p>
-          <div className="bar" style={ { width: `${stat.base_stat}%` } } />
+          <div
+            className="bar"
+            value={ stat.stat.name }
+            style={ { width: `${stat.base_stat}%` } }
+          />
         </div>
       ))}
     </div>

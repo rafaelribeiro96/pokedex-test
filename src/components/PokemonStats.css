@@ -1,3 +1,10 @@
+:root {
+
+  --bar-height: 10px;
+
+  --bar-border-radius: 5px;
+}
+
 .stats-pokemons {
   display: flex;
   flex-direction: column;
@@ -16,12 +23,46 @@
   width: 200px;
 }
 
-.stats-pokemons-details .bar {
-  background-color: rgba(43, 43, 43, 0.493);
-  border: dotted 1px red;
-  height: 5%;
+.bar[ value = 'hp' ] {
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: var(--bar-border-radius);
+  height: var(--bar-height);
   transition: width 0.5s;
-  width: 0;
+}
+
+.bar[ value = 'attack' ] {
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: var(--bar-border-radius);
+  height: var(--bar-height);
+  transition: width 0.5s;
+}
+
+.bar[ value = 'defense' ] {
+  background-color: rgba(0, 128, 0, 0.5);
+  border-radius: var(--bar-border-radius);
+  height: var(--bar-height);
+  transition: width 0.5s;
+}
+
+.bar[ value = 'special-attack' ] {
+  background-color: rgba(255, 255, 0, 0.5);
+  border-radius: var(--bar-border-radius);
+  height: var(--bar-height);
+  transition: width 0.5s;
+}
+
+.bar[ value = 'special-defense' ] {
+  background-color: rgba(255, 165, 0, 0.5);
+  border-radius: var(--bar-border-radius);
+  height: var(--bar-height);
+  transition: width 0.5s;
+}
+
+.bar[ value = 'speed' ] {
+  background-color: rgba(128, 0, 128, 0.5);
+  border-radius: var(--bar-border-radius);
+  height: var(--bar-height);
+  transition: width 0.5s;
 }
 
 @media ( max-width : 850px ) {
@@ -30,4 +71,8 @@
     width: 50%;
   }
 
+}
+
+.option-type[ value = 'normal' ] {
+  background-color: rgb(168, 168, 120, 0.5);
 }
