@@ -42,7 +42,9 @@ function Pokedex(props) {
               <Pokemon pokemon={ pokemon } />
             </Link>
           )) : (
-            <Pokemon pokemon={ pokemons } />
+            <Link className="card-a" to={ `/pokemon/${pokemons.id}` }>
+              <Pokemon pokemon={ pokemons } />
+            </Link>
           ))}
         </div>
       )}
