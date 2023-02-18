@@ -30,11 +30,21 @@
   transition: width 0.5s;
 }
 
+.bar[ value = 'hp' ]:hover {
+  background-color: blue;
+  transition: all 0.5s ease;
+}
+
 .bar[ value = 'attack' ] {
   background-color: rgba(255, 0, 0, 0.5);
   border-radius: var(--bar-border-radius);
   height: var(--bar-height);
   transition: width 0.5s;
+}
+
+.bar[ value = 'attack' ]:hover {
+  background-color: red;
+  transition: all 0.5s ease;
 }
 
 .bar[ value = 'defense' ] {
@@ -44,11 +54,21 @@
   transition: width 0.5s;
 }
 
+.bar[ value = 'defense' ]:hover {
+  background-color: green;
+  transition: all 0.5s ease;
+}
+
 .bar[ value = 'special-attack' ] {
   background-color: rgba(255, 255, 0, 0.5);
   border-radius: var(--bar-border-radius);
   height: var(--bar-height);
   transition: width 0.5s;
+}
+
+.bar[ value = 'special-attack' ]:hover {
+  background-color: yellow;
+  transition: all 0.5s ease;
 }
 
 .bar[ value = 'special-defense' ] {
@@ -58,11 +78,26 @@
   transition: width 0.5s;
 }
 
+.bar[ value = 'special-defense' ]:hover {
+  background-color: orange;
+  transition: all 0.5s ease;
+}
+
 .bar[ value = 'speed' ] {
   background-color: rgba(128, 0, 128, 0.5);
   border-radius: var(--bar-border-radius);
   height: var(--bar-height);
   transition: width 0.5s;
+}
+
+.bar[ value = 'speed' ]:hover {
+  background-color: purple;
+  transition: all 0.5s ease;
+}
+
+.stats-pokemons-details:hover {
+  filter: brightness(1.2);
+  transition: all 0.3s ease;
 }
 
 @media ( max-width : 850px ) {
