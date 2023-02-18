@@ -1,4 +1,5 @@
 .div-sprites img {
+  height: 80px;
   margin: 10px;
   transition: all 0.5s ease-in-out;
   width: 80px;
