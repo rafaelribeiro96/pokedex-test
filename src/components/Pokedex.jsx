@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types'; */
 import Pokemon from './Pokemon';
 import './Pokedex.css';
 import Pagination from './Pagination';
@@ -37,12 +38,14 @@ function Pokedex(props) {
         <div><Loading /></div>
       ) : (
         <div className="pokedex-grid">
-          {pokemons
-            && pokemons.map((pokemon, index) => (
-              <Link className="card-a" to={ `/pokemon/${pokemon.id}` } key={ index }>
-                <Pokemon pokemon={ pokemon } />
-              </Link>
-            ))}
+          {console.log('pokemons: ', pokemons)}
+          {pokemons && (Array.isArray(pokemons) ? pokemons.map((pokemon, index) => (
+            <Link className="card-a" to={ `/pokemon/${pokemon.id}` } key={ index }>
+              <Pokemon pokemon={ pokemon } />
+            </Link>
+          )) : (
+            <Pokemon pokemon={ pokemons } />
+          ))}
         </div>
       )}
       <div className="pagination-bottom">
@@ -59,20 +62,3 @@ function Pokedex(props) {
 }
 
 export default Pokedex;
-
-Pokedex.propTypes = {
-  pokemons: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    averageWeight: PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      measurementUnit: PropTypes.string.isRequired,
-    }),
-    image: PropTypes.string,
-  })).isRequired,
-  loading: PropTypes.bool.isRequired,
-  page: PropTypes.number.isRequired,
-  setPage: PropTypes.func.isRequired,
-  totalPages: PropTypes.number.isRequired,
-};
