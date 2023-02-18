@@ -36,17 +36,18 @@
 
 @media ( max-width : 850px ) {
 
-  .pokemon-infos-details-container {
-    align-items: center;
-    flex-direction: column;
+  .pokemon-info-stats {
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    width: 100%;
   }
 
-  .pokemon-info-stats {
-    display: flex;
-    flex-direction: wrap;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  .pokemon-info-stats p {
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+    margin: 5px 0;
+    padding: 5px 0;
+    width: 40%;
   }
 
 }
