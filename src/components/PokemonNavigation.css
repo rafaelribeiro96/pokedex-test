@@ -5,6 +5,7 @@
   width: 100%;
 }
 
+
 .btn-next-back {
   background-color: #ffc107;
   border: none;
@@ -63,9 +64,17 @@
     width: 40px;
   }
 
+
   .btn-back {
-    margin: 20px 10px 0;
+    font-size: medium;
+    font-weight: 600;
+    margin: 10px 10px 0;
+    padding: 10px 20px;
   }
 
+  .btn-next-back {
+    margin-top: 5px;
+    padding: 5px 15px;
+  }
 
 }
