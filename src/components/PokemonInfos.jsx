@@ -10,14 +10,14 @@ function PokemonInfos(props) {
   return (
     <div className="pokemon-info-stats">
 
-      <p>
+      <p className="weight-height">
         Peso:
         {' '}
         {pokemon.weight / TEN }
         {' '}
         kg
       </p>
-      <p>
+      <p className="weight-height">
         Altura:
         {' '}
         {pokemon.height / TEN }
@@ -29,7 +29,7 @@ function PokemonInfos(props) {
         {' '}
         {pokemon.types.map((type) => type.type.name).join(', ')}
       </p>
-      <p>
+      <p className="type-pokemon-details">
         Habilidades:
         {' '}
         {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}
