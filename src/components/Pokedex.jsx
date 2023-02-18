@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
-/* import PropTypes from 'prop-types'; */
+import PropTypes from 'prop-types';
 import Pokemon from './Pokemon';
 import './Pokedex.css';
 import Pagination from './Pagination';
@@ -38,7 +37,6 @@ function Pokedex(props) {
         <div><Loading /></div>
       ) : (
         <div className="pokedex-grid">
-          {console.log('pokemons: ', pokemons)}
           {pokemons && (Array.isArray(pokemons) ? pokemons.map((pokemon, index) => (
             <Link className="card-a" to={ `/pokemon/${pokemon.id}` } key={ index }>
               <Pokemon pokemon={ pokemon } />
@@ -62,3 +60,14 @@ function Pokedex(props) {
 }
 
 export default Pokedex;
+
+Pokedex.propTypes = {
+  pokemons: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.object,
+  ]).isRequired,
+  loading: PropTypes.bool.isRequired,
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
+  totalPages: PropTypes.number.isRequired,
+};

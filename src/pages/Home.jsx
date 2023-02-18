@@ -1,10 +1,11 @@
-/* eslint-disable max-len */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Pokedex from '../components/Pokedex';
 import Searchbar from '../components/Searchbar';
-import { getPokemonData, getPokemons, searchPokemonForName, searchPokemon, searchPokemonByType } from '../services/apiPokemon';
+import { getPokemonData, getPokemons,
+  searchPokemonForName, searchPokemon, searchPokemonByType }
+  from '../services/apiPokemon';
 import './Home.css';
 import NotFound from '../components/NotFound';
 import SearchByType from '../components/SearchByType';
@@ -28,7 +29,8 @@ function Home() {
         setTotalPages(Math.ceil(data.length / pokemonByPage));
         const start = pokemonByPage * page;
         const end = start + pokemonByPage;
-        const promises = data.slice(start, end).map((pokemon) => getPokemonData(pokemon.url));
+        const promises = data.slice(start, end)
+          .map((pokemon) => getPokemonData(pokemon.url));
         const response = await Promise.all(promises);
         setPokemons(response);
         setLoading(false);

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './PokemonImgDetails.css';
 
-function ImgDetails(props) {
+function PokemonImgDetails(props) {
   const { pokemon } = props;
   const { shiny } = props;
 
@@ -19,22 +19,22 @@ function ImgDetails(props) {
   );
 }
 
-export default ImgDetails;
+export default PokemonImgDetails;
 
-ImgDetails.propTypes = {
+PokemonImgDetails.propTypes = {
   pokemon: PropTypes.shape({
     sprites: PropTypes.shape({
       other: PropTypes.shape({
         dream_world: PropTypes.shape({
-          front_default: PropTypes.string.isRequired,
-        }).isRequired,
+          front_default: PropTypes.string,
+        }),
         'official-artwork': PropTypes.shape({
-          front_default: PropTypes.string.isRequired,
-        }).isRequired,
+          front_default: PropTypes.string,
+        }),
         home: PropTypes.shape({
-          front_shiny: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
+          front_shiny: PropTypes.string,
+        }),
+      }),
     }).isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
