@@ -23,6 +23,7 @@ function Home() {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
+      setNotFound(false);
       let data;
       if (type) {
         data = await searchPokemonByType(type);
